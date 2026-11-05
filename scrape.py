@@ -400,8 +400,9 @@ def flags_for(r, sweet):
         f.append("Target company")
     if r.roles_open >= 2:
         f.append(f"{r.roles_open} roles open")
-    if r.size:
-        f.append(f"Size {r.size}")
+    size = str(r["size"] or "").strip()
+    if size and size.lower() != "nan":
+        f.append(f"Size {size}")
     return "; ".join(f)
 
 
@@ -428,6 +429,7 @@ def main():
 
     if CONFIG.get("require_salary"):
         jobs = jobs[jobs["salary"].fillna("") != ""]
+    jobs = jobs[~jobs["salary"].fillna("").str.endswith(" a day")]  # day rates are contractors
     jobs = funnel_step(n, "pay_27k_plus", jobs[jobs["annual"].fillna(0) >= CONFIG["min_annual_salary"]])
 
     jobs = funnel_step(n, "not_agency", jobs[~jobs.apply(
