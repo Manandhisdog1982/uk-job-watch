@@ -1,0 +1,38 @@
+15:25:20 indeed 'Operations Manager': 50
+15:25:45 linkedin 'Operations Manager': 50
+15:25:49 reed skipped: no REED_API_KEY secret
+15:25:50 indeed 'Production Manager': 30
+15:26:11 linkedin 'Production Manager': 50
+15:26:15 reed skipped: no REED_API_KEY secret
+15:26:15 indeed 'Quality Manager': 19
+15:26:42 linkedin 'Quality Manager': 50
+15:26:46 reed skipped: no REED_API_KEY secret
+15:26:47 indeed 'Engineering Manager': 39
+15:27:14 linkedin 'Engineering Manager': 50
+15:27:18 reed skipped: no REED_API_KEY secret
+15:27:18 indeed 'Maintenance Manager': 16
+15:27:46 linkedin 'Maintenance Manager': 50
+15:27:50 reed skipped: no REED_API_KEY secret
+15:27:51 indeed 'Site Manager': 50
+15:28:18 linkedin 'Site Manager': 50
+15:28:22 reed skipped: no REED_API_KEY secret
+15:28:23 indeed 'Supply Chain Manager': 5
+15:28:48 linkedin 'Supply Chain Manager': 50
+15:28:52 reed skipped: no REED_API_KEY secret
+15:28:53 indeed 'HR Manager': 35
+15:29:17 linkedin 'HR Manager': 50
+15:29:21 reed skipped: no REED_API_KEY secret
+15:29:21 indeed 'HR Business Partner': 21
+15:29:46 linkedin 'HR Business Partner': 50
+15:29:50 reed skipped: no REED_API_KEY secret
+15:29:50 indeed 'Maintenance Engineer': 26
+15:30:15 linkedin 'Maintenance Engineer': 50
+15:30:19 reed skipped: no REED_API_KEY secret
+15:30:19 indeed 'Electrical Engineer': 21
+15:30:43 linkedin 'Electrical Engineer': 50
+15:30:47 reed skipped: no REED_API_KEY secret
+15:30:47 indeed 'Plant Manager': 2
+15:31:13 linkedin 'Plant Manager': 40
+15:31:17 reed skipped: no REED_API_KEY secret
+15:31:17 raw 904, after agency filter 852, after dedupe 764
+15:31:18 companies 585, jobs 764
