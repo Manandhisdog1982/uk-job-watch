@@ -165,9 +165,9 @@ def track_for(title, search):
     t = " " + norm(title) + " "
     office = any(w in t for w in OFFICE_WORDS)
     eng = any(w in t for w in ENG_WORDS)
-    if office and not eng:
+    if office:  # "People Operations Manager", "Sales Operations Manager" are office roles
         return "Office"
-    if eng and not office:
+    if eng:
         return "Engineering"
     return "Engineering" if search in ENG_SEARCHES else "Office"
 
