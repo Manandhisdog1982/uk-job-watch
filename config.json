@@ -1,0 +1,35 @@
+{
+  "location": "United Kingdom",
+  "hours_old": 24,
+  "results_per_search": 50,
+  "sites": ["indeed", "linkedin", "reed"],
+  "job_titles": [
+    "Operations Manager",
+    "Production Manager",
+    "Quality Manager",
+    "Engineering Manager",
+    "Maintenance Manager",
+    "Site Manager",
+    "Supply Chain Manager",
+    "HR Manager",
+    "HR Business Partner",
+    "Maintenance Engineer",
+    "Electrical Engineer",
+    "Plant Manager"
+  ],
+  "target_companies": [],
+  "agency_names": [
+    "Hays", "Reed", "Adecco", "Randstad", "Michael Page", "Page Personnel",
+    "Robert Walters", "Robert Half", "Manpower", "Pertemps", "Brook Street",
+    "Gi Group", "Morson", "Matchtech", "Sanderson", "Jonathan Lee",
+    "NRL", "CBS Butler", "Search Consultancy", "Kenda", "Hudson Shribman",
+    "Blue Arrow", "Staffline", "Kelly Services", "Cpl", "Harvey Nash",
+    "Jackson Hogg", "Fusion People", "Matchtech", "Rise Technical",
+    "Ernest Gordon", "Spencer Clarke", "Holt Engineering", "SWJ Search"
+  ],
+  "agency_keywords": [
+    "recruitment", "recruiting", "recruiters", "resourcing", "personnel",
+    "staffing", "talent solutions", "selection", "employment agency",
+    "headhunt", "search partners", "appointments"
+  ]
+}
