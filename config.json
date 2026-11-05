@@ -14,10 +14,10 @@
   "require_salary": true,
   "min_annual_salary": 27000,
   "max_company_size": 500,
-  "daily_leads": 40,
+  "daily_leads": 30,
   "track_split": {
-    "Engineering": 20,
-    "Office": 20
+    "Engineering": 15,
+    "Office": 15
   },
   "max_ads_per_company": 4,
   "resurface_after_days": 60,
