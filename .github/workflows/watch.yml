@@ -9,15 +9,20 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: job-watcher
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          cache: pip
       - run: pip install -r requirements.txt
       - name: Collect jobs
         env:
@@ -25,8 +30,9 @@ jobs:
         run: python scrape.py
       - name: Save results
         run: |
-          git config user.name "swj-job-watcher"
+          git config user.name "job-watcher"
           git config user.email "actions@users.noreply.github.com"
           git add data
           git commit -m "Job watcher run $(date -u +%F)" || echo "No changes"
+          git pull --rebase
           git push
