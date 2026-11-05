@@ -1,14 +1,15 @@
-"""SWJ Search Job Watcher, version 3.
+"""UK job board watcher, version 3.2.
 
 Runs each weekday morning on GitHub Actions. Collects job ads from Indeed UK
 (python-jobspy) and Reed (official API, direct employers only), filters them
 down to fillable roles at small and mid sized direct employers, and writes a
-CRM ready shortlist (20 Engineering, 20 Office) for Claude to load as role leads.
+CRM ready shortlist (20 Engineering, 20 Office) for the daily CRM load.
 
 All filtering happens here, in Python, so the Claude side only loads rows.
 
 Outputs in data/:
-  leads.csv        today's shortlist, one row per company, CRM ready
+  leads.csv        today's shortlist, one row per company
+  leads.json       the same shortlist as ready made CRM lead documents
   latest_jobs.csv  every ad that passed the filters, with scores
   history.csv      first and last seen dates per ad, for repost detection
   emitted.csv      companies already sent to the CRM, so they are not resent
@@ -122,11 +123,17 @@ def excluded_company(company):
     return any(f" {w.strip()} " in c for w in COMPANY_EXCLUDE)
 
 
+def _word_re(terms):
+    return re.compile(r"\b(?:" + "|".join(re.escape(t.strip()) for t in terms) + r")\b")
+
+
+MUST_RE = _word_re(MUST)
+EXCLUDE_RE = _word_re(TITLE_EXCLUDE)
+
+
 def title_ok(title):
-    t = " " + norm(title) + " "
-    if not any(m in t for m in MUST):
-        return False
-    return not any((" " + e.strip() + " ") in t if e.endswith(" ") else e in t for e in TITLE_EXCLUDE)
+    t = norm(title)
+    return bool(MUST_RE.search(t)) and not EXCLUDE_RE.search(t)
 
 
 def track_for(title, search):
@@ -230,7 +237,12 @@ def postcode_town(pc):
     try:
         r = requests.get(f"https://api.postcodes.io/postcodes/{pc.replace(' ', '')}", timeout=10)
         res = r.json().get("result") or {}
-        town = res.get("admin_district") or res.get("parish") or ""
+        town = ""
+        for k in ("parish", "admin_district"):
+            v = str(res.get(k) or "")
+            if v and not v.endswith("unparished area") and not vague_town(v):
+                town = v
+                break
     except Exception as e:
         log(f"postcode lookup failed for {pc}: {str(e)[:80]}")
     TOWNS[key] = town
@@ -262,6 +274,14 @@ def town_postcode(town):
         log(f"town lookup failed for {town}: {str(e)[:80]}")
     TOWNS[key] = pc
     return pc
+
+
+VAGUE_RE = re.compile(r"(shire|district|borough|county|region)$|^(north|south|east|west|greater|central) |^(england|scotland|wales|uk|united kingdom|london)$")
+
+
+def vague_town(town):
+    """County, region or district names make poor email subject lines."""
+    return bool(VAGUE_RE.search(norm(town)))
 
 
 def postcode_area(pc):
@@ -364,7 +384,7 @@ NICHE = ("maintenance", "multi skilled", "electrical", "electrician", "mechanica
 
 def score_row(r, sweet):
     lo, hi = sweet
-    t = " " + norm(r.title) + " "
+    t = " " + norm(r["title"]) + " "
     s = 0
     if any(w in t for w in SENIOR):
         s += 25
@@ -373,33 +393,33 @@ def score_row(r, sweet):
     else:
         s += 10
     if any(w in t for w in NICHE):
-        s += 10  # SWJ's core market: engineering and maintenance
-    s += min(25, int((r.annual or 0) / 3000))  # bigger salary, bigger fee
-    if lo <= r.age_days <= hi:
+        s += 10  # core market: engineering and maintenance
+    s += min(25, int((r["annual"] or 0) / 3000))  # bigger salary, bigger fee
+    if lo <= r["age_days"] <= hi:
         s += 15  # live long enough that they probably need help
-    if r.repost:
+    if r["repost"]:
         s += 20
-    if r.target:
+    if r["target"]:
         s += 40
-    if 2 <= r.roles_open <= 4:
+    if 2 <= r["roles_open"] <= 4:
         s += 5
-    if r.home:
+    if r["home"]:
         s += 5
-    if r.postcode_type == "from advert":
+    if r["postcode_type"] == "from advert":
         s += 2
-    if r.site == "reed":
+    if r["site"] == "reed":
         s += 2  # confirmed direct employer
     return s
 
 
 def flags_for(r, sweet):
-    f = [f"Live {r.age_days} days"]
-    if r.repost:
+    f = [f"Live {r['age_days']} days"]
+    if r["repost"]:
         f.append("Repost")
-    if r.target:
+    if r["target"]:
         f.append("Target company")
-    if r.roles_open >= 2:
-        f.append(f"{r.roles_open} roles open")
+    if r["roles_open"] >= 2:
+        f.append(f"{r['roles_open']} roles open")
     size = str(r["size"] or "").strip()
     if size and size.lower() != "nan":
         f.append(f"Size {size}")
@@ -433,7 +453,7 @@ def main():
     jobs = funnel_step(n, "pay_27k_plus", jobs[jobs["annual"].fillna(0) >= CONFIG["min_annual_salary"]])
 
     jobs = funnel_step(n, "not_agency", jobs[~jobs.apply(
-        lambda r: is_agency(r.company, r.industry, r.description), axis=1)])
+        lambda r: is_agency(r["company"], r["industry"], r["description"]), axis=1)])
     jobs = jobs[~jobs["company"].apply(is_big)]
     jobs = jobs[~jobs["size"].apply(size_too_big)]
     jobs = funnel_step(n, "not_big", jobs[~jobs["company"].apply(excluded_company)])
@@ -460,7 +480,7 @@ def main():
     first_seen = dict(zip(hist["key"], hist["first_seen"]))
 
     def age_days(r):
-        d = r.date_posted or first_seen.get(r.key, TODAY.isoformat())
+        d = r["date_posted"] or first_seen.get(r["key"], TODAY.isoformat())
         try:
             return (TODAY - date.fromisoformat(str(d)[:10])).days
         except ValueError:
@@ -502,9 +522,9 @@ def main():
     # postcodes and towns only for the shortlist (saves lookups)
     towns, pcs, types = [], [], []
     for _, r in leads.iterrows():
-        town, pc, ptype = r.town, r.postcode, r.postcode_type
-        if pc and not town:
-            town = postcode_town(pc)
+        town, pc, ptype = r["town"], r["postcode"], r["postcode_type"]
+        if pc and (not town or vague_town(town)):
+            town = postcode_town(pc) or town
         if not pc and town:
             pc = town_postcode(town)
             ptype = "town centre, approximate" if pc else ""
@@ -524,6 +544,15 @@ def main():
     leads = leads[out]
     leads.insert(0, "run_date", TODAY.isoformat())
     leads.to_csv(DATA / "leads.csv", index=False)
+    docs = []
+    for _, r in leads.iterrows():
+        note = f"Job Watcher {r['score']}: {r['flags']}" + (f"; postcode {r['postcode']}" if r["postcode"] else "")
+        docs.append({"doc_id": r["doc_id"], "data": {
+            "company": r["company"], "role": r["title"], "location": r["town"] or r["postcode"],
+            "salaryText": r["salary"], "salary": int(r["salary_lower"]), "advertUrl": r["url"],
+            "source": "Job Watcher", "status": "New", "contactId": "", "track": r["track"],
+            "notes": note, "addedAt": TODAY.isoformat()}})
+    (DATA / "leads.json").write_text(json.dumps({"run_date": TODAY.isoformat(), "leads": docs}, indent=1))
 
     jobs_out = jobs[[c for c in out if c in jobs.columns and c not in ("doc_id", "salary_lower")]]
     jobs_out.insert(0, "run_date", TODAY.isoformat())
