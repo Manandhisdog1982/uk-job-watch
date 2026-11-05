@@ -72,6 +72,8 @@ MUST = [m.lower() for m in CONFIG["title_must_contain"]]
 TITLE_EXCLUDE = [x.lower() for x in CONFIG["title_exclude"]]
 COMPANY_EXCLUDE = [x.lower() for x in CONFIG["exclude_company_words"]]
 ENG_SEARCHES = set(CONFIG["engineering_titles"])
+INDUSTRY_EXCLUDE = [x.lower() for x in CONFIG.get("industry_exclude", [])]
+DESCRIPTION_EXCLUDE = [x.lower() for x in CONFIG.get("description_exclude", [])]
 HOME_AREAS = set(CONFIG.get("home_postcode_areas", []))
 
 ENG_WORDS = ("engineer", "technician", "electrician", "fitter", "maintenance", "production",
@@ -134,6 +136,29 @@ EXCLUDE_RE = _word_re(TITLE_EXCLUDE)
 def title_ok(title):
     t = norm(title)
     return bool(MUST_RE.search(t)) and not EXCLUDE_RE.search(t)
+
+
+def clean_title(title):
+    """Drop location and status tails: 'Head of Finance, Manchester', 'X | Eastbourne', 'Y - Full Time'."""
+    t = re.split(r"\s*[|]\s*", str(title or ""))[0]
+    t = re.sub(r"\s*\(?[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\)?\s*$", "", t)  # trailing postcode
+    t = re.sub(r",\s*[A-Z][A-Za-z .&'-]+$", "", t)
+    t = re.sub(r"\s*[-–]\s*(full time|permanent|hybrid|immediate start)[\w /]*$", "", t, flags=re.I)
+    return t.strip(" -–")
+
+
+def bad_company_name(company):
+    """Reed sometimes puts the job title or a vague phrase in the employer field."""
+    c = norm(company)
+    return bool(MUST_RE.search(c)) or any(w in c for w in ("organisation", "confidential", "leading", "client"))
+
+
+def wrong_sector(industry, description):
+    ind = str(industry or "").lower()
+    if any(w in ind for w in INDUSTRY_EXCLUDE):
+        return True
+    d = str(description or "").lower()[:2000]
+    return sum(1 for w in DESCRIPTION_EXCLUDE if w in d) >= 2
 
 
 def track_for(title, search):
@@ -217,15 +242,16 @@ def fmt_postcode(outward, inward):
 def split_location(location):
     """Return (town, postcode, postcode_type) from a job board location string."""
     full = str(location or "").replace("Hybrid work in ", "").replace("Remote in ", "").strip()
-    loc = full.split(",")[0].strip()
+    parts = [p.strip() for p in full.split(",")]
+    loc, hint = parts[0], " ".join(parts[1:])
     m = POSTCODE_FULL_RE.match(loc.upper().replace(" ", ""))
     if m:  # the whole location is a postcode (common on Reed)
-        return "", fmt_postcode(m.group(1), m.group(2)), "from advert"
+        return "", fmt_postcode(m.group(1), m.group(2)), "from advert", hint
     m = POSTCODE_RE.search(full.upper())
     if m:  # a postcode anywhere in the string, e.g. "Wigan, WN5 0AB"
         town = loc if m.start() > len(loc) else loc[: m.start()].strip(" -")
-        return town, fmt_postcode(m.group(1), m.group(2)), "from advert"
-    return loc, "", ""
+        return town, fmt_postcode(m.group(1), m.group(2)), "from advert", hint
+    return loc, "", "", hint
 
 
 def postcode_town(pc):
@@ -238,7 +264,7 @@ def postcode_town(pc):
         r = requests.get(f"https://api.postcodes.io/postcodes/{pc.replace(' ', '')}", timeout=10)
         res = r.json().get("result") or {}
         town = ""
-        for k in ("parish", "admin_district"):
+        for k in ("admin_district", "parish"):
             v = str(res.get(k) or "")
             if v and not v.endswith("unparished area") and not vague_town(v):
                 town = v
@@ -249,20 +275,30 @@ def postcode_town(pc):
     return town
 
 
-def town_postcode(town):
-    """Central postcode for a town via postcodes.io, preferring cities and towns over hamlets."""
+def town_postcode(town, hint=""):
+    """Central postcode for a town via postcodes.io. Same named places are settled by the
+    advert's county hint, then by place type, then England before the rest (the core market)."""
     key = norm(town)
     if not key:
         return ""
-    if key in TOWNS:
-        return TOWNS[key]
+    cache_key = key + ("|" + norm(hint) if hint else "")
+    if cache_key in TOWNS:
+        return TOWNS[cache_key]
     pc = ""
     rank = {"City": 0, "Town": 1, "Suburban Area": 2, "Village": 3}
+    h = norm(hint)
+
+    def order(p):
+        where = norm(" ".join(str(p.get(k) or "") for k in ("county_unitary", "district_borough", "region")))
+        hit = 0 if (h and (h in where or where and where in h)) else 1
+        country = 0 if p.get("country") == "England" else 1
+        return (hit, rank.get(p.get("local_type"), 9), country)
+
     try:
         r = requests.get("https://api.postcodes.io/places", params={"q": town, "limit": 20}, timeout=10)
         places = [p for p in (r.json().get("result") or []) if norm(p.get("name_1")) == key] \
             or (r.json().get("result") or [])
-        places.sort(key=lambda p: rank.get(p.get("local_type"), 9))
+        places.sort(key=order)
         if places:
             lat, lon = places[0]["latitude"], places[0]["longitude"]
             r2 = requests.get("https://api.postcodes.io/postcodes",
@@ -272,7 +308,7 @@ def town_postcode(town):
                 pc = res[0]["postcode"]
     except Exception as e:
         log(f"town lookup failed for {town}: {str(e)[:80]}")
-    TOWNS[key] = pc
+    TOWNS[cache_key] = pc
     return pc
 
 
@@ -456,12 +492,17 @@ def main():
         lambda r: is_agency(r["company"], r["industry"], r["description"]), axis=1)])
     jobs = jobs[~jobs["company"].apply(is_big)]
     jobs = jobs[~jobs["size"].apply(size_too_big)]
+    jobs = jobs[~jobs["company"].apply(bad_company_name)]
     jobs = funnel_step(n, "not_big", jobs[~jobs["company"].apply(excluded_company)])
+    jobs = funnel_step(n, "right_sector", jobs[~jobs.apply(
+        lambda r: wrong_sector(r["industry"], r["description"]), axis=1)])
 
     parts = jobs["location"].apply(split_location)
     jobs["town"] = [p[0] for p in parts]
     jobs["postcode"] = [p[1] for p in parts]
     jobs["postcode_type"] = [p[2] for p in parts]
+    jobs["hint"] = [p[3] for p in parts]
+    jobs["title"] = jobs["title"].map(clean_title)
     jobs["company_key"] = jobs["company"].map(company_key)
     jobs["key"] = jobs["company_key"] + "|" + jobs["title"].map(norm) + "|" + jobs["town"].map(norm)
     # same ad on both boards: same title and same pay, or same company and title
@@ -504,7 +545,8 @@ def main():
     emitted = pd.read_csv(emitted_path) if emitted_path.exists() else pd.DataFrame(
         columns=["company_key", "company", "first_sent", "last_sent"])
     recent_cut = (TODAY - timedelta(days=CONFIG["resurface_after_days"])).isoformat()
-    recent = set(emitted.loc[emitted["last_sent"] >= recent_cut, "company_key"])
+    recent = set(emitted.loc[(emitted["last_sent"] >= recent_cut)
+                             & (emitted["last_sent"] != TODAY.isoformat()), "company_key"])
     fresh = jobs[~jobs["company_key"].isin(recent)].drop_duplicates("company_key")
     n["new_companies"] = len(fresh)
 
@@ -526,7 +568,7 @@ def main():
         if pc and (not town or vague_town(town)):
             town = postcode_town(pc) or town
         if not pc and town:
-            pc = town_postcode(town)
+            pc = town_postcode(town, r["hint"])
             ptype = "town centre, approximate" if pc else ""
         towns.append(town)
         pcs.append(pc)
