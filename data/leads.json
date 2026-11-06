@@ -1,684 +1,514 @@
 {
- "run_date": "2026-11-05",
+ "run_date": "2026-11-06",
  "leads": [
   {
-   "doc_id": "prodigi-group-group-production-manager",
+   "doc_id": "polyframe-engineering-manager",
    "data": {
-    "company": "Prodigi Group",
-    "role": "Group Production Manager",
-    "location": "Alton",
-    "salaryText": "\u00a375,000 to \u00a380,000",
-    "salary": 75000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=eac1d779dc4c9ec2",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 75: Live 14 days; postcode GU34 1BJ",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "ppg-health-in-justice-head-of-operations",
-   "data": {
-    "company": "PPG Health In Justice",
-    "role": "Head of Operations",
-    "location": "Reading",
-    "salaryText": "\u00a380,000 to \u00a390,000",
-    "salary": 80000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=20eb6d0eaa3e70e2",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 70: Live 10 days; 2 roles open; postcode RG1 2LR",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "amp-clean-energy-site-manager-cargill-exolum",
-   "data": {
-    "company": "AMP Clean Energy",
-    "role": "Site Manager - Cargill & Exolum",
-    "location": "Kingston upon Hull",
-    "salaryText": "\u00a360,000",
-    "salary": 60000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=e08516e1bfac37f7",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 65: Live 15 days; 2 roles open; Size 201 to 500; postcode HU1 2AA",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "zenovo-operations-manager",
-   "data": {
-    "company": "ZENOVO",
-    "role": "Operations Manager",
-    "location": "Eastbourne",
-    "salaryText": "\u00a390,000 to \u00a3100,000",
-    "salary": 90000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=7cbd0264905c3b21",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 65: Live 9 days; postcode BN21 9SA",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "durateam-environmental-site-manager",
-   "data": {
-    "company": "Durateam Environmental",
-    "role": "Site Manager",
-    "location": "Lyme Regis",
-    "salaryText": "\u00a355,000 to \u00a360,000",
-    "salary": 55000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=7ff900f9b3fc29b3",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 63: Live 9 days; 2 roles open; postcode DT7 3JB",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "nlpss-band-8a-operations-manager-for-occupational-health-wellbeing-services",
-   "data": {
-    "company": "NLPSS",
-    "role": "Band 8a Operations Manager for Occupational Health & Wellbeing Services",
-    "location": "London",
-    "salaryText": "\u00a366,274 to \u00a373,496",
-    "salary": 66300,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=8b898d1ca087529a",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 62: Live 13 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "kelling-group-engineering-manager",
-   "data": {
-    "company": "Kelling Group",
+    "company": "Polyframe",
     "role": "Engineering Manager",
-    "location": "Leeds",
-    "salaryText": "\u00a338,000 to \u00a345,000",
-    "salary": 38000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=e2af934312d526b6",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 62: Live 10 days; Size 201 to 500; postcode LS1 3AJ",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "leisuresk-limited-operations-director",
-   "data": {
-    "company": "LeisureSK Limited",
-    "role": "Operations Director",
-    "location": "Grantham",
-    "salaryText": "\u00a360,000 to \u00a365,000",
-    "salary": 60000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=ffbe18a85dc6c05e",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 60: Live 15 days; postcode NG31 6QY",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "b-kitchen-head-of-operations",
-   "data": {
-    "company": "B Kitchen",
-    "role": "Head of Operations",
-    "location": "London",
-    "salaryText": "\u00a360,000 to \u00a374,000",
-    "salary": 60000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=fe1ff055fecbd58f",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 60: Live 13 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "crab-boar-general-manager",
-   "data": {
-    "company": "Crab & Boar",
-    "role": "General Manager",
-    "location": "Chieveley",
-    "salaryText": "\u00a355,000 to \u00a360,000",
+    "location": "Lenwade",
+    "salaryText": "\u00a355,000",
     "salary": 55000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=0125a085bb58e4b3",
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=a60178d8d50a02dd",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 58: Live 16 days; postcode RG20 8UT",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 68: Live 14 days; postcode NR9 5QN",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "open-bionics-supply-chain-manager",
+   "doc_id": "stevenswood-trade-counters-limited-engineering-manager",
    "data": {
-    "company": "Open Bionics",
-    "role": "Supply Chain Manager",
-    "location": "Bristol",
-    "salaryText": "\u00a355,000 to \u00a365,000",
+    "company": "Stevenswood Trade Counters Limited",
+    "role": "Engineering Manager",
+    "location": "Norwich",
+    "salaryText": "\u00a355,000",
     "salary": 55000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=05681c8d99f06633",
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=cf8a8c2bfd2dc376",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 58: Live 7 days; postcode BS1 5HS",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 68: Live 14 days; postcode NR2 1NG",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "clearcourse-operations-manager",
+   "doc_id": "alliance-medical-production-manager",
    "data": {
-    "company": "ClearCourse",
-    "role": "Operations Manager",
-    "location": "London",
-    "salaryText": "\u00a346,000 to \u00a351,000",
-    "salary": 46000,
-    "advertUrl": "https://www.reed.co.uk/jobs/operations-manager/57486009",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 57: Live 14 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "trafalgar-enterainment-buildings-technical-manager-eastbourne-permanent",
-   "data": {
-    "company": "Trafalgar Enterainment",
-    "role": "Buildings & Technical Manager | Eastbourne | Permanent",
-    "location": "Eastbourne",
+    "company": "Alliance Medical",
+    "role": "Production Manager",
+    "location": "Preston",
     "salaryText": "\u00a352,000",
     "salary": 52000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=201aa75e7632039a",
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=2c2c1ae6aba157e7",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 57: Live 8 days; postcode BN21 9SA",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 67: Live 11 days; Size 201 to 500; postcode PR1 1DD",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "jc-executive-group-people-operations-manager",
+   "doc_id": "goodwin-steel-castings-night-shift-production-manager",
    "data": {
-    "company": "JC Executive Group",
-    "role": "People Operations Manager",
-    "location": "Coventry",
+    "company": "Goodwin Steel Castings",
+    "role": "Night Shift Production Manager",
+    "location": "Stoke-on-Trent",
     "salaryText": "\u00a350,000 to \u00a360,000",
     "salary": 50000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=e83e710015a41b46",
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=5d6a4b1732846e16",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 56: Live 15 days; postcode CV1 5RN",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 66: Live 15 days; postcode ST1 3EA",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "childbase-partnership-nursery-quality-manager",
+   "doc_id": "the-ilchester-cheese-co-ltd-site-production-manager",
    "data": {
-    "company": "Childbase Partnership",
-    "role": "Nursery Quality Manager",
-    "location": "Oxford",
-    "salaryText": "\u00a338,356 to \u00a341,438",
-    "salary": 38400,
-    "advertUrl": "https://www.reed.co.uk/jobs/nursery-quality-manager/57503640",
+    "company": "The Ilchester Cheese Co Ltd",
+    "role": "Site Production Manager",
+    "location": "Ilchester",
+    "salaryText": "\u00a350,000 to \u00a353,000",
+    "salary": 50000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=ce87fcc8ba98aeab",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 56: Live 7 days; postcode OX3 7RH",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 66: Live 10 days; postcode BA22 8QP",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "trg-concessions-general-manager",
+   "doc_id": "new-life-teeth-technical-production-manager",
    "data": {
-    "company": "TRG Concessions",
-    "role": "General Manager",
-    "location": "Dyce",
+    "company": "New Life Teeth",
+    "role": "Technical Production Manager",
+    "location": "Belfast",
+    "salaryText": "\u00a350,000 to \u00a365,000",
+    "salary": 50000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=01b89cde7042e6e0",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 66: Live 9 days",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "royal-albert-hall-production-operations-manager",
+   "data": {
+    "company": "Royal Albert Hall",
+    "role": "Production Operations Manager",
+    "location": "London",
+    "salaryText": "\u00a347,250 to \u00a354,000",
+    "salary": 47200,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=32aaed76f7aec461",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 65: Live 7 days; Size 201 to 500; postcode WC2N 5DU",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "aiyara-partners-operations-director",
+   "data": {
+    "company": "Aiyara Partners",
+    "role": "Operations Director",
+    "location": "Leicester",
+    "salaryText": "\u00a390,000 to \u00a3100,000",
+    "salary": 90000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=ce16367fca6b8ddf",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 65: Live 7 days; postcode LE1 5BD",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "benifex-senior-backend-engineer-java",
+   "data": {
+    "company": "Benifex",
+    "role": "Senior Backend Engineer (Java)",
+    "location": "Southampton",
+    "salaryText": "\u00a370,000 to \u00a390,000",
+    "salary": 70000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=63f87e701c2ecc05",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 63: Live 11 days; 2 roles open; Size 201 to 500; postcode SO14 7FE",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "qualitops-uk-ltd-production-manager",
+   "data": {
+    "company": "Qualitops (UK) Ltd",
+    "role": "Production Manager",
+    "location": "King's Lynn",
+    "salaryText": "\u00a338,000 to \u00a342,000",
+    "salary": 38000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=1ffaf4c8a6d71334",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 62: Live 18 days; postcode PE30 5DQ",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "gspk-circuits-limited-production-manager",
+   "data": {
+    "company": "GSPK Circuits Limited",
+    "role": "Production Manager",
+    "location": "Knaresborough",
+    "salaryText": "\u00a335,000 to \u00a340,000",
+    "salary": 35000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=813a9cdf9ca603db",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 61: Live 17 days; postcode HG5 0AB",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "flynn-s-fine-foods-ltd-food-production-manager",
+   "data": {
+    "company": "Flynn's Fine Foods Ltd",
+    "role": "Food Production Manager",
+    "location": "Rosslea",
+    "salaryText": "\u00a335,000",
+    "salary": 35000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=93ce479a8dd0ffc8",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 61: Live 9 days; Size 11 to 50",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "the-humane-league-uk-head-of-programmes",
+   "data": {
+    "company": "The Humane League UK",
+    "role": "Head of Programmes",
+    "location": "Brighton",
+    "salaryText": "\u00a364,582 to \u00a371,041",
+    "salary": 64600,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=48fc403651427d6d",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 61: Live 8 days; postcode BN1 1FN",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "fife-quality-manager",
+   "data": {
+    "company": "FIFE",
+    "role": "Quality Manager",
+    "location": "Lochgelly",
+    "salaryText": "\u00a363,000",
+    "salary": 63000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=53f2811d2f64a326",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 61: Live 7 days; postcode KY5 9RD",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "the-scout-association-ground-maintenance-manager",
+   "data": {
+    "company": "The Scout Association",
+    "role": "Ground Maintenance Manager",
+    "location": "Gilwell Park",
+    "salaryText": "\u00a330,888",
+    "salary": 30900,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=e5b287c0e6e19572",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 60: Live 21 days",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "active-pcb-solutions-limited-group-head-of-business-development",
+   "data": {
+    "company": "Active PCB Solutions Limited",
+    "role": "Group Head of Business Development",
+    "location": "Reading",
+    "salaryText": "\u00a365,000 to \u00a380,000",
+    "salary": 65000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=a69e65e68490ec87",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 61: Live 8 days; postcode RG1 2LR",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "unity-schools-partnership-head-of-hr-business-partnering",
+   "data": {
+    "company": "Unity Schools Partnership",
+    "role": "Head of HR Business Partnering",
+    "location": "Haverhill",
+    "salaryText": "\u00a359,474 to \u00a366,076",
+    "salary": 59500,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=92d04cd673b0d2d4",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 59: Live 17 days; postcode CB9 9DY",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "gulf-hr-manager-talent-development",
+   "data": {
+    "company": "Gulf",
+    "role": "HR Manager / Talent Development",
+    "location": "Westminster",
+    "salaryText": "\u00a360,000",
+    "salary": 60000,
+    "advertUrl": "https://www.reed.co.uk/jobs/hr-manager-talent-development/57509099",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 59: Live 7 days; 2 roles open; postcode SW1Y 4QU",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "solarfix-ni-ltd-financial-controller",
+   "data": {
+    "company": "Solarfix NI Ltd",
+    "role": "Financial Controller",
+    "location": "Newtownabbey",
     "salaryText": "\u00a345,000 to \u00a355,000",
     "salary": 45000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=7a21df3863da9a86",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 55: Live 16 days; Size Decline to state; postcode AB21 7BA",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "ingrid-west-machinery-ltd-machine-and-tooling-development-engineer",
-   "data": {
-    "company": "Ingrid West Machinery Ltd",
-    "role": "Machine and Tooling Development Engineer",
-    "location": "Tewkesbury",
-    "salaryText": "\u00a340,000 to \u00a350,000",
-    "salary": 40000,
-    "advertUrl": "https://www.reed.co.uk/jobs/machine-and-tooling-development-engineer/57479740",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 55: Live 15 days; 2 roles open; postcode GL20 5AB",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "carlton-towers-general-manager",
-   "data": {
-    "company": "Carlton Towers",
-    "role": "General Manager",
-    "location": "Goole",
-    "salaryText": "\u00a345,000 to \u00a350,000",
-    "salary": 45000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=eed4b078bc9169e1",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 55: Live 13 days; postcode DN14 5DR",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "oc-motor-repairs-ltd-bodyshop-manager-accident-repair-centre-manager",
-   "data": {
-    "company": "OC Motor Repairs Ltd",
-    "role": "Bodyshop Manager / Accident Repair Centre Manager",
-    "location": "Madeley",
-    "salaryText": "\u00a350,000 to \u00a360,000",
-    "salary": 50000,
-    "advertUrl": "https://www.reed.co.uk/jobs/bodyshop-manager-accident-repair-centre-manager/57493314",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 55: Live 10 days; 2 roles open; postcode TF7 4QW",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "recycling-lives-services-supply-chain-manager",
-   "data": {
-    "company": "Recycling Lives Services",
-    "role": "Supply Chain Manager",
-    "location": "Preston",
-    "salaryText": "\u00a347,000 to \u00a352,000",
-    "salary": 47000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=27566ae39a77dabe",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 55: Live 8 days; Size 51 to 200; postcode PR1 1DD",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "planit-head-of-finance-manchester",
-   "data": {
-    "company": "Planit",
-    "role": "Head of Finance, Manchester",
-    "location": "Manchester",
-    "salaryText": "\u00a365,000 to \u00a370,000",
-    "salary": 65000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=4db8e0e897bfe773",
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=e4e0edb5147673f5",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 61: Live 8 days; Size 51 to 200; postcode M2 5PE",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 55: Live 18 days",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "imobilize-ltd-financial-controller-full-time-permanent",
+   "doc_id": "araceli-biosciences-business-development-manager-uk",
    "data": {
-    "company": "Imobilize Ltd",
-    "role": "Financial Controller - Full Time Permanent",
-    "location": "Blackburn",
-    "salaryText": "\u00a340,022 to \u00a346,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=7e32c672d7cd07ba",
+    "company": "Araceli Biosciences",
+    "role": "Business Development Manager - UK",
+    "location": "Remote",
+    "salaryText": "\u00a3125,000 to \u00a3200,000",
+    "salary": 125000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=c1fff8219a148df8",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 53: Live 10 days; postcode AB21 0LX",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 55: Live 11 days",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "financial-controller-general-manager-financial-controller",
+   "doc_id": "monterra-financial-controller",
    "data": {
-    "company": "Financial Controller /General Manager",
+    "company": "Monterra",
     "role": "Financial Controller",
-    "location": "Omagh",
-    "salaryText": "\u00a339,900 to \u00a355,000",
+    "location": "West Hanningfield",
+    "salaryText": "\u00a339,900 to \u00a385,600",
     "salary": 39900,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=614fa710e621cab1",
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=4c49f56b6f09a449",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 53: Live 7 days",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 53: Live 17 days; postcode CM2 8UP",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "industry-leading-organisation-sales-manager",
+   "doc_id": "right-now-group-business-development-manager-airfreight",
    "data": {
-    "company": "Industry-Leading Organisation",
-    "role": "Sales Manager",
-    "location": "Westminster",
-    "salaryText": "\u00a355,000 to \u00a375,000",
-    "salary": 55000,
-    "advertUrl": "https://www.reed.co.uk/jobs/sales-manager/57467902",
+    "company": "Right Now Group",
+    "role": "Business Development Manager Airfreight",
+    "location": "Surrey Quays",
+    "salaryText": "\u00a350,000 to \u00a3100,000",
+    "salary": 50000,
+    "advertUrl": "https://www.reed.co.uk/jobs/business-development-manager-airfreight/57509312",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 52: Live 20 days; postcode W1J 6NB",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 53: Live 7 days; 2 roles open",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "reagent-chemical-services-sales-manager",
+   "doc_id": "masters-electrical-projects-ltd-commercial-electrician",
    "data": {
-    "company": "ReAgent Chemical Services",
-    "role": "Sales Manager",
-    "location": "Runcorn",
-    "salaryText": "\u00a360,500",
-    "salary": 60500,
-    "advertUrl": "https://www.reed.co.uk/jobs/sales-manager/57487200",
+    "company": "Masters Electrical Projects Ltd",
+    "role": "Commercial Electrician",
+    "location": "Bristol",
+    "salaryText": "\u00a31,000 to \u00a31,500",
+    "salary": 52000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=e86f4de68bc47667",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 52: Live 13 days; postcode WA7 1LT",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 52: Live 17 days; postcode BS1 5HS",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "primis-mortgage-network-protection-sales-manager",
+   "doc_id": "eco-contractors-europe-limited-office-manager-electrical-contracting",
    "data": {
-    "company": "PRIMIS Mortgage Network",
-    "role": "Protection Sales Manager",
-    "location": "Brighouse",
-    "salaryText": "\u00a365,000",
-    "salary": 65000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=40bbdf47d7feb1d2",
+    "company": "ECO Contractors Europe Limited",
+    "role": "Office Manager \u2013 Electrical Contracting",
+    "location": "Haywards Heath",
+    "salaryText": "\u00a338,000 to \u00a342,000",
+    "salary": 38000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=5986c06b128563a6",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 51: Live 7 days; postcode HD6 1FG",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 52: Live 7 days; postcode RH16 3TL",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "riverlane-senior-product-marketing-manager-hardware",
+   "doc_id": "lynch-motor-company-sales-and-operations-manager",
    "data": {
-    "company": "Riverlane",
-    "role": "Senior Product Marketing Manager \u2013 Hardware",
-    "location": "Cambridge",
-    "salaryText": "\u00a361,500 to \u00a380,000",
-    "salary": 61500,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=6a2c88759be030ce",
+    "company": "Lynch Motor Company",
+    "role": "Sales and Operations Manager",
+    "location": "Dunkeswell",
+    "salaryText": "\u00a335,000 to \u00a365,020",
+    "salary": 35000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=79902b572b6a268c",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 50: Live 14 days; postcode CB2 3QJ",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 51: Live 16 days",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "caroola-client-relationship-manager-internal",
+   "doc_id": "quarriers-senior-finance-manager-planning-development",
    "data": {
-    "company": "Caroola",
-    "role": "Client Relationship Manager - Internal",
-    "location": "Warrington",
-    "salaryText": "\u00a330,000 to \u00a335,000",
-    "salary": 30000,
-    "advertUrl": "https://www.reed.co.uk/jobs/client-relationship-manager-internal/57461381",
+    "company": "Quarriers",
+    "role": "Senior Finance Manager Planning & Development",
+    "location": "Quarrier's Village",
+    "salaryText": "\u00a349,322",
+    "salary": 49300,
+    "advertUrl": "https://www.reed.co.uk/jobs/senior-finance-manager-planning-development/57508060",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 49: Live 21 days; postcode WA1 1RL",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 48: Live 7 days; postcode PA11 3TE",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "southern-water-finance-business-partner",
+   "doc_id": "a-s-glory-limited-marketing-manager",
    "data": {
-    "company": "Southern Water",
-    "role": "Finance Business Partner",
-    "location": "Worthing",
-    "salaryText": "\u00a360,000 to \u00a365,000",
-    "salary": 60000,
-    "advertUrl": "https://www.reed.co.uk/jobs/finance-business-partner/57493514",
+    "company": "A&S GLORY LIMITED",
+    "role": "Marketing Manager",
+    "location": "Watford",
+    "salaryText": "\u00a352,000 to \u00a355,000",
+    "salary": 52000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=dd388e5a6a9b25a5",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 49: Live 10 days; postcode BN13 3AX",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 47: Live 15 days; postcode WD17 2DN",
+    "addedAt": "2026-11-06"
    }
   },
   {
-   "doc_id": "artorius-faber-business-development-manager",
+   "doc_id": "the-adaptavist-group-regional-hr-manager",
    "data": {
-    "company": "Artorius Faber",
+    "company": "The Adaptavist Group",
+    "role": "Regional HR Manager",
+    "location": "Remote",
+    "salaryText": "\u00a350,000 to \u00a370,000",
+    "salary": 50000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=7062c4c8378a7a05",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 46: Live 21 days",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "grg-waste-uk-ltd-business-and-finance-manager",
+   "data": {
+    "company": "GRG Waste UK Ltd",
+    "role": "Business and Finance Manager",
+    "location": "Crewe",
+    "salaryText": "\u00a350,000",
+    "salary": 50000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=2ed59b92a8dea46b",
+    "source": "Job Watcher",
+    "status": "New",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 46: Live 18 days; postcode CW2 7EA",
+    "addedAt": "2026-11-06"
+   }
+  },
+  {
+   "doc_id": "rci-group-business-development-manager",
+   "data": {
+    "company": "RCI Group",
     "role": "Business Development Manager",
-    "location": "London",
-    "salaryText": "\u00a350,000",
-    "salary": 50000,
-    "advertUrl": "https://www.reed.co.uk/jobs/business-development-manager/57485696",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 48: Live 14 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "exam-papers-plus-digital-marketing-manager",
-   "data": {
-    "company": "Exam Papers Plus",
-    "role": "Digital Marketing Manager",
-    "location": "London",
+    "location": "Stevenage",
     "salaryText": "\u00a350,000 to \u00a360,000",
     "salary": 50000,
-    "advertUrl": "https://www.reed.co.uk/jobs/digital-marketing-manager/57487690",
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=835415784fbd448e",
     "source": "Job Watcher",
     "status": "New",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 48: Live 13 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "dynex-semiconductor-sales-support-manager",
-   "data": {
-    "company": "Dynex Semiconductor",
-    "role": "Sales Support Manager",
-    "location": "Lincoln",
-    "salaryText": "\u00a342,000",
-    "salary": 42000,
-    "advertUrl": "https://www.reed.co.uk/jobs/sales-support-manager/57505302",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 48: Live 7 days; postcode LN6 3LF",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "simer-environmental-services-ltd-finance-manager",
-   "data": {
-    "company": "Simer Environmental Services Ltd.",
-    "role": "Finance Manager",
-    "location": "Havant",
-    "salaryText": "\u00a340,000 to \u00a345,000",
-    "salary": 40000,
-    "advertUrl": "https://www.reed.co.uk/jobs/finance-manager/57463364",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 47: Live 21 days; postcode PO7 7UP",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "ascert-human-resources-manager",
-   "data": {
-    "company": "ascert",
-    "role": "Human Resources Manager",
-    "location": "Lisburn",
-    "salaryText": "\u00a346,142",
-    "salary": 46100,
-    "advertUrl": "https://www.reed.co.uk/jobs/human-resources-manager/57475329",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 47: Live 16 days",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "talos-commercial-management-accountant",
-   "data": {
-    "company": "Talos",
-    "role": "Commercial Management Accountant",
-    "location": "Burtonwood and Westbrook",
-    "salaryText": "\u00a340,000 to \u00a345,000",
-    "salary": 40000,
-    "advertUrl": "https://www.reed.co.uk/jobs/commercial-management-accountant/57487540",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 47: Live 13 days; postcode WA5 8WD",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "barco-sales-area-sales-manager",
-   "data": {
-    "company": "Barco Sales",
-    "role": "Area Sales Manager",
-    "location": "Croydon",
-    "salaryText": "\u00a340,000 to \u00a345,000",
-    "salary": 40000,
-    "advertUrl": "https://www.reed.co.uk/jobs/area-sales-manager/57488137",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 47: Live 13 days; postcode CR0 1EA",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "malvern-garden-buildings-area-sales-manager",
-   "data": {
-    "company": "Malvern Garden Buildings",
-    "role": "Area Sales Manager",
-    "location": "Chippenham",
-    "salaryText": "\u00a342,900",
-    "salary": 42900,
-    "advertUrl": "https://www.reed.co.uk/jobs/area-sales-manager/57481114",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 15 days; postcode SN15 3HL",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "nexus-storage-distribution-ltd-business-development-manager-3pl-contract-logistics",
-   "data": {
-    "company": "Nexus Storage & Distribution ltd.",
-    "role": "Business Development Manager \u2013 3PL & Contract Logistics",
-    "location": "Wombwell",
-    "salaryText": "\u00a348,000 to \u00a372,000",
-    "salary": 48000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=3b68108ef337c390",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 14 days; postcode S73 0DA",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "zest-plan-customer-lifecycle-marketing-manager",
-   "data": {
-    "company": "Zest Plan",
-    "role": "Customer Lifecycle Marketing Manager",
-    "location": "Bournemouth",
-    "salaryText": "\u00a350,000 to \u00a360,000",
-    "salary": 50000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=b6c1a68dffaf4ec1",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 13 days; Size 51 to 200; postcode BH1 1DT",
-    "addedAt": "2026-11-05"
-   }
-  },
-  {
-   "doc_id": "we-are-stellify-customer-service-manager",
-   "data": {
-    "company": "We Are Stellify",
-    "role": "Customer Service Manager",
-    "location": "Leeds",
-    "salaryText": "\u00a350,000",
-    "salary": 50000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=0e52930655b2f3a7",
-    "source": "Job Watcher",
-    "status": "New",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 9 days; Size 2 to 10; postcode LS1 3AJ",
-    "addedAt": "2026-11-05"
+    "notes": "Job Watcher 46: Live 9 days; postcode SG1 1DP",
+    "addedAt": "2026-11-06"
    }
   }
  ]
