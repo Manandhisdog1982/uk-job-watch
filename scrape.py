@@ -1,15 +1,25 @@
-"""UK job board watcher, version 3.2.
+"""UK job board watcher, version 3.4.
 
-Runs each weekday morning on GitHub Actions. Collects job ads from Indeed UK
+Runs each working day morning on GitHub Actions. Collects job ads from Indeed UK
 (python-jobspy) and Reed (official API, direct employers only), filters them
 down to fillable roles at small and mid sized direct employers, and writes a
-CRM ready shortlist (20 Engineering, 20 Office) for the daily CRM load.
+CRM ready shortlist (15 Engineering, 15 Office, set in config.json) for the
+daily CRM load. Every lead is written at status "Review": nothing is looked up
+or spent on a lead until it has been approved in the CRM.
+
+It does not run on weekends, England and Wales bank holidays or 24 December to
+2 January (a run started by hand always runs). The shortlists of the two runs
+before today's are carried in leads.json as well, so a morning when the CRM
+load did not happen does not lose those companies to the 60 day cooldown: the
+load skips any lead the CRM already holds.
 
 All filtering happens here, in Python, so the Claude side only loads rows.
 
 Outputs in data/:
   leads.csv        today's shortlist, one row per company
-  leads.json       the same shortlist as ready made CRM lead documents
+  leads.json       the same shortlist as ready made CRM lead documents, plus
+                   the previous two runs' leads in case their load was missed
+  recent_leads.json  the last three runs' shortlists, for that carry over
   latest_jobs.csv  every ad that passed the filters, with scores
   history.csv      first and last seen dates per ad, for repost detection
   emitted.csv      companies already sent to the CRM, so they are not resent
@@ -34,6 +44,14 @@ DATA.mkdir(exist_ok=True)
 TODAY = date.today()
 LOG = []
 CONFIG = json.loads((ROOT / "config.json").read_text())
+ISO_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def is_workday(d):
+    """Monday to Friday, not an England and Wales bank holiday, not 24 December to 2 January."""
+    if d.weekday() >= 5 or d.isoformat() in set(CONFIG.get("bank_holidays", [])):
+        return False
+    return not ((d.month == 12 and d.day >= 24) or (d.month == 1 and d.day <= 2))
 
 POSTCODE_FULL_RE = re.compile(r"^([A-Z]{1,2}[0-9][A-Z0-9]?)\s*([0-9][A-Z]{2})$")
 POSTCODE_RE = re.compile(r"\b([A-Z]{1,2}[0-9][A-Z0-9]?)\s*([0-9][A-Z]{2})\b")
@@ -101,10 +119,11 @@ def is_agency(company, industry="", description=""):
     if any(w in ind for w in ("staffing", "recruit", "employment agenc")):
         return True
     d = str(description or "").lower()[:1500]
-    if any(p in d for p in ("our client", "on behalf of our client", "my client",
-                            "the client is", "are recruiting on behalf")):
-        return True
-    return False
+    return bool(AGENCY_PHRASE_RE.search(d))
+
+
+# "our client" and "our client's" are agency wording; "our clients" is how a direct employer talks about its customers
+AGENCY_PHRASE_RE = re.compile(r"\b(?:our|my) client\b|\bthe client is\b|\bare recruiting on behalf\b")
 
 
 def is_big(company):
@@ -327,6 +346,12 @@ def postcode_area(pc):
 
 # ---------- sources ----------
 
+def iso_or_blank(value):
+    """A posting date as YYYY-MM-DD, or "" when the board gave none (NaT, None, nan)."""
+    s = str(value or "")[:10]
+    return s if ISO_DATE_RE.match(s) else ""
+
+
 def from_indeed(title):
     rows = []
     if "indeed" not in CONFIG["sites"]:
@@ -349,7 +374,7 @@ def from_indeed(title):
                 "location": r.get("location"),
                 "site": "indeed",
                 "url": r.get("job_url"),
-                "date_posted": str(r.get("date_posted") or "")[:10],
+                "date_posted": iso_or_blank(r.get("date_posted")),
                 "salary": salary_text(r.get("min_amount"), r.get("max_amount"), interval),
                 "annual": annual(r.get("min_amount") or r.get("max_amount"), interval),
                 "industry": r.get("company_industry"),
@@ -464,12 +489,30 @@ def flags_for(r, sweet):
 
 # ---------- main ----------
 
+def each_row(jobs, fn):
+    """fn over every row as a plain list (DataFrame.apply returns the wrong shape on an empty frame)."""
+    return [fn(r) for r in jobs.to_dict("records")]
+
+
 def funnel_step(n, name, jobs):
     n[name] = len(jobs)
     return jobs
 
 
 def main():
+    by_hand = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+    if not by_hand and not is_workday(TODAY):
+        print(f"{TODAY} is not a working day: no run, nothing changed")
+        return
+    leads_path = DATA / "leads.json"
+    if os.environ.get("GITHUB_EVENT_NAME") == "schedule" and leads_path.exists():
+        try:  # the second scheduled time is only a back up for a morning when the first did not fire
+            if json.loads(leads_path.read_text()).get("run_date") == TODAY.isoformat():
+                print("already ran today: back up run not needed, nothing changed")
+                return
+        except ValueError:
+            pass
+
     rows = []
     for title in CONFIG["engineering_titles"] + CONFIG["office_titles"]:
         rows += from_indeed(title)
@@ -488,14 +531,14 @@ def main():
     jobs = jobs[~jobs["salary"].fillna("").str.endswith(" a day")]  # day rates are contractors
     jobs = funnel_step(n, "pay_27k_plus", jobs[jobs["annual"].fillna(0) >= CONFIG["min_annual_salary"]])
 
-    jobs = funnel_step(n, "not_agency", jobs[~jobs.apply(
-        lambda r: is_agency(r["company"], r["industry"], r["description"]), axis=1)])
+    jobs = funnel_step(n, "not_agency", jobs[[not is_agency(r["company"], r["industry"], r["description"])
+                                               for r in jobs.to_dict("records")]])
     jobs = jobs[~jobs["company"].apply(is_big)]
     jobs = jobs[~jobs["size"].apply(size_too_big)]
     jobs = jobs[~jobs["company"].apply(bad_company_name)]
     jobs = funnel_step(n, "not_big", jobs[~jobs["company"].apply(excluded_company)])
-    jobs = funnel_step(n, "right_sector", jobs[~jobs.apply(
-        lambda r: wrong_sector(r["industry"], r["description"]), axis=1)])
+    jobs = funnel_step(n, "right_sector", jobs[[not wrong_sector(r["industry"], r["description"])
+                                                 for r in jobs.to_dict("records")]])
 
     parts = jobs["location"].apply(split_location)
     jobs["town"] = [p[0] for p in parts]
@@ -521,13 +564,12 @@ def main():
     first_seen = dict(zip(hist["key"], hist["first_seen"]))
 
     def age_days(r):
-        d = r["date_posted"] or first_seen.get(r["key"], TODAY.isoformat())
-        try:
-            return (TODAY - date.fromisoformat(str(d)[:10])).days
-        except ValueError:
-            return 0
+        # an ad with no posting date is aged from the first day this watcher saw it
+        d = iso_or_blank(r["date_posted"]) or iso_or_blank(first_seen.get(r["key"])) or TODAY.isoformat()
+        return (TODAY - date.fromisoformat(d)).days
 
-    jobs["age_days"] = jobs.apply(age_days, axis=1)
+    jobs["age_days"] = each_row(jobs, age_days)
+    seen_today = jobs[["key", "company", "title"]].copy()  # every ad, so an undated one can reach the minimum age
     jobs = funnel_step(n, "age_ok", jobs[jobs["age_days"] >= CONFIG["min_age_days"]])
     jobs["repost"] = jobs["key"].map(
         lambda k: k in first_seen and str(first_seen[k]) <= (TODAY - timedelta(days=28)).isoformat())
@@ -536,8 +578,8 @@ def main():
     jobs["track"] = [track_for(t, s) for t, s in zip(jobs["title"], jobs["search"])]
 
     sweet = CONFIG["sweet_spot_days"]
-    jobs["score"] = jobs.apply(lambda r: score_row(r, sweet), axis=1)
-    jobs["flags"] = jobs.apply(lambda r: flags_for(r, sweet), axis=1)
+    jobs["score"] = each_row(jobs, lambda r: score_row(r, sweet))
+    jobs["flags"] = each_row(jobs, lambda r: flags_for(r, sweet))
     jobs = jobs.sort_values(["score", "age_days"], ascending=[False, False])
 
     # companies already sent to the CRM recently are not sent again
@@ -592,9 +634,32 @@ def main():
         docs.append({"doc_id": r["doc_id"], "data": {
             "company": r["company"], "role": r["title"], "location": r["town"] or r["postcode"],
             "salaryText": r["salary"], "salary": int(r["salary_lower"]), "advertUrl": r["url"],
-            "source": "Job Watcher", "status": "New", "contactId": "", "track": r["track"],
+            "source": "Job Watcher", "status": "Review", "contactId": "", "track": r["track"],
             "notes": note, "addedAt": TODAY.isoformat()}})
-    (DATA / "leads.json").write_text(json.dumps({"run_date": TODAY.isoformat(), "leads": docs}, indent=1))
+
+    # carry over the two runs before this one (at most a week old), in case their CRM load was missed
+    recent_path = DATA / "recent_leads.json"
+    try:
+        recent = json.loads(recent_path.read_text()) if recent_path.exists() else []
+    except ValueError:
+        recent = []
+    week_ago = (TODAY - timedelta(days=7)).isoformat()
+    earlier = sorted((x for x in recent if week_ago <= str(x.get("run_date", "")) < TODAY.isoformat()),
+                     key=lambda x: x["run_date"])[-2:]
+    have = {d["doc_id"] for d in docs}
+    carried = []
+    for run in reversed(earlier):
+        for d in run.get("leads", []):
+            if d["doc_id"] in have:
+                continue
+            have.add(d["doc_id"])
+            data = dict(d["data"], status="Review", addedAt=TODAY.isoformat())
+            if "first listed" not in str(data.get("notes", "")):
+                data["notes"] = f"{data.get('notes', '')}; first listed {run['run_date']}"
+            carried.append({"doc_id": d["doc_id"], "data": data})
+    leads_path.write_text(json.dumps({"run_date": TODAY.isoformat(), "new_today": len(docs), "carried": len(carried),
+                                      "leads": docs + carried}, indent=1))
+    recent_path.write_text(json.dumps(earlier + [{"run_date": TODAY.isoformat(), "leads": docs}], indent=1))
 
     jobs_out = jobs[[c for c in out if c in jobs.columns and c not in ("doc_id", "salary_lower")]]
     jobs_out.insert(0, "run_date", TODAY.isoformat())
@@ -608,7 +673,7 @@ def main():
     emitted = emitted[emitted["last_sent"] >= (TODAY - timedelta(days=180)).isoformat()]
     emitted.to_csv(emitted_path, index=False)
 
-    new = jobs[["key", "company", "title"]].copy()
+    new = seen_today
     new["first_seen"] = new["key"].map(lambda k: first_seen.get(k, TODAY.isoformat()))
     new["last_seen"] = TODAY.isoformat()
     hist = pd.concat([hist[~hist["key"].isin(new["key"])], new])
@@ -617,7 +682,7 @@ def main():
 
     log("funnel " + ", ".join(f"{k} {v}" for k, v in n.items()))
     by_track = leads["track"].value_counts().to_dict()
-    log(f"leads {len(leads)} ({', '.join(f'{k} {v}' for k, v in by_track.items())}), "
+    log(f"leads {len(leads)} ({', '.join(f'{k} {v}' for k, v in by_track.items())}), carried over {len(carried)}, "
         f"jobs kept {len(jobs)}, towns cached {len(TOWNS)}")
     (DATA / "run_log.txt").write_text("\n".join(LOG) + "\n")
 

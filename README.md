@@ -1,7 +1,8 @@
 # uk-job-watch
 
-Daily UK job board watcher. Runs on GitHub Actions every weekday morning, free,
-and leaves a ranked shortlist in `data/` for a CRM load.
+Daily UK job board watcher. Runs on GitHub Actions every working day morning, free,
+and leaves a ranked shortlist in `data/` for a CRM load. No run on weekends, England and
+Wales bank holidays (`bank_holidays` in `config.json`) or 24 December to 2 January.
 
 ## What it does
 
@@ -14,15 +15,20 @@ and leaves a ranked shortlist in `data/` for a CRM load.
 4. Merges Ltd, Limited and plc variants of the same company across boards, drops
    anyone with more than 4 live ads, and anyone shortlisted in the last 60 days.
 5. Scores every ad (seniority, core market, salary, days live, repost, target
-   company) and picks 20 Engineering and 20 Office companies, one ad each.
-6. Fills in a postcode for the town (or a town for the postcode) for the 40 only.
+   company) and picks 15 Engineering and 15 Office companies, one ad each
+   (`track_split` and `daily_leads` in `config.json`).
+6. Fills in a postcode for the town (or a town for the postcode) for the 30 only.
+7. Writes every lead at status "Review", and carries the two previous runs' leads in
+   `leads.json` too, so a missed CRM load is picked up the next morning. The load
+   never overwrites a lead the CRM already holds.
 
 ## Files in data/
 
 | File | What |
 |---|---|
 | `leads.csv` | Today's shortlist, one row per company |
-| `leads.json` | The same shortlist as ready made CRM lead documents |
+| `leads.json` | The same shortlist as ready made CRM lead documents, plus the previous two runs' leads |
+| `recent_leads.json` | The last three runs' shortlists, for the carry over |
 | `latest_jobs.csv` | Every ad that passed the filters |
 | `emitted.csv` | Companies already shortlisted and when (60 day cooldown) |
 | `history.csv` | First and last seen per ad, for repost detection |

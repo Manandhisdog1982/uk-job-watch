@@ -2,8 +2,11 @@ name: Job Watcher
 
 on:
   schedule:
-    # 05:30 UTC on weekdays (05:30 UK in winter, 06:30 in summer)
-    - cron: "30 5 * * 1-5"
+    # GitHub runs schedules in UTC and often starts them up to an hour late.
+    # 04:30 UTC on weekdays (04:30 UK in winter, 05:30 in summer): the main run.
+    - cron: "30 4 * * 1-5"
+    # 05:40 UTC: a back up for a morning when the first did not fire. It stops at once if today's run already happened.
+    - cron: "40 5 * * 1-5"
   workflow_dispatch: {}
 
 permissions:
