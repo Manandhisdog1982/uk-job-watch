@@ -1,9 +1,9 @@
-"""UK job board watcher, version 3.4.
+"""UK job board watcher, version 3.5.
 
 Runs each working day morning on GitHub Actions. Collects job ads from Indeed UK
 (python-jobspy) and Reed (official API, direct employers only), filters them
 down to fillable roles at small and mid sized direct employers, and writes a
-CRM ready shortlist (15 Engineering, 15 Office, set in config.json) for the
+CRM ready shortlist (10 Engineering, 20 Office, set in config.json) for the
 daily CRM load. Every lead is written at status "Review": nothing is looked up
 or spent on a lead until it has been approved in the CRM.
 
@@ -102,7 +102,8 @@ ENG_WORDS = ("engineer", "technician", "electrician", "fitter", "maintenance", "
 OFFICE_WORDS = ("hr ", "human resources", "people", "finance", "financial", "accountant",
                 "accounts", "controller", "payroll", "sales", "business development", "account manager",
                 "marketing", "content", "ecommerce", "e commerce", "digital", "customer service",
-                "office manager", "credit", "commercial")
+                "office manager", "credit", "commercial", "procurement", "purchasing", "buyer",
+                "category manager")
 
 
 # ---------- classification ----------
@@ -439,8 +440,13 @@ def from_reed(title):
 SENIOR = ("director", "head of", "general manager", "operations manager", "plant manager",
           "production manager", "engineering manager", "maintenance manager", "site manager",
           "financial controller", "quality manager", "technical manager", "supply chain manager")
-NICHE = ("maintenance", "multi skilled", "electrical", "electrician", "mechanical", "technician",
+NICHE = ("maintenance", "multi skilled", "electrical", "electrician", "mechanical",
          "production", "manufacturing", "plant", "engineer")
+# v3.5: commercial roles (sales, procurement, finance) are the priority; technicians are
+# still collected but rank below everything else in the Engineering track
+COMMERCIAL = ("sales", "procurement", "purchasing", "buyer", "category manager", "commercial",
+              "finance", "financial", "account manager", "credit control")
+HARD_TO_FILL = ("technician",)
 
 
 def score_row(r, sweet):
@@ -455,6 +461,10 @@ def score_row(r, sweet):
         s += 10
     if any(w in t for w in NICHE):
         s += 10  # core market: engineering and maintenance
+    if any(w in t for w in COMMERCIAL):
+        s += 15  # commercial roles first (v3.5)
+    if any(w in t for w in HARD_TO_FILL):
+        s -= 20  # maintenance technicians: keep, but last in line (v3.5)
     s += min(25, int((r["annual"] or 0) / 3000))  # bigger salary, bigger fee
     if lo <= r["age_days"] <= hi:
         s += 15  # live long enough that they probably need help
@@ -592,7 +602,7 @@ def main():
     fresh = jobs[~jobs["company_key"].isin(recent)].drop_duplicates("company_key")
     n["new_companies"] = len(fresh)
 
-    # shortlist: 20 Engineering and 20 Office; a short track fills from the other
+    # shortlist: per track_split in config.json; a short track fills from the other
     split = CONFIG["track_split"]
     picks = []
     for track, want in split.items():

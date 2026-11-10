@@ -16,8 +16,8 @@
   "max_company_size": 500,
   "daily_leads": 30,
   "track_split": {
-    "Engineering": 15,
-    "Office": 15
+    "Engineering": 10,
+    "Office": 20
   },
   "max_ads_per_company": 4,
   "resurface_after_days": 60,
@@ -95,7 +95,22 @@
     "Account Manager",
     "Marketing Manager",
     "Content Creator",
-    "Customer Service Manager"
+    "Customer Service Manager",
+    "Procurement Manager",
+    "Purchasing Manager",
+    "Senior Buyer",
+    "Category Manager",
+    "Commercial Manager",
+    "Commercial Director",
+    "Sales Director",
+    "Head of Sales",
+    "Key Account Manager",
+    "National Account Manager",
+    "Area Sales Manager",
+    "Internal Sales Manager",
+    "Finance Director",
+    "Head of Finance",
+    "Credit Control Manager"
   ],
   "title_must_contain": [
     "manager",
@@ -110,7 +125,8 @@
     "hr advisor",
     "people advisor",
     "content creator",
-    "fitter"
+    "fitter",
+    "buyer"
   ],
   "title_exclude": [
     "assistant",

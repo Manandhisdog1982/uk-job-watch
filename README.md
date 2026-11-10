@@ -15,7 +15,7 @@ Wales bank holidays (`bank_holidays` in `config.json`) or 24 December to 2 Janua
 4. Merges Ltd, Limited and plc variants of the same company across boards, drops
    anyone with more than 4 live ads, and anyone shortlisted in the last 60 days.
 5. Scores every ad (seniority, core market, salary, days live, repost, target
-   company) and picks 15 Engineering and 15 Office companies, one ad each
+   company) and picks 10 Engineering and 20 Office companies, one ad each
    (`track_split` and `daily_leads` in `config.json`).
 6. Fills in a postcode for the town (or a town for the postcode) for the 30 only.
 7. Writes every lead at status "Review", and carries the two previous runs' leads in
