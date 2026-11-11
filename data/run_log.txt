@@ -1,82 +1,112 @@
-05:20:47 indeed 'Operations Manager': 100
-05:20:48 reed 'Operations Manager': 60
-05:20:51 indeed 'Operations Director': 100
-05:20:51 reed 'Operations Director': 25
-05:20:54 indeed 'General Manager': 100
-05:20:54 reed 'General Manager': 71
-05:20:57 indeed 'Managing Director': 100
-05:20:57 reed 'Managing Director': 43
-05:21:00 indeed 'Site Manager': 100
-05:21:00 reed 'Site Manager': 29
-05:21:03 indeed 'Plant Manager': 45
-05:21:03 reed 'Plant Manager': 1
-05:21:06 indeed 'Production Manager': 100
-05:21:06 reed 'Production Manager': 24
-05:21:09 indeed 'Shift Manager': 100
-05:21:09 reed 'Shift Manager': 69
-05:21:12 indeed 'Warehouse Manager': 100
-05:21:12 reed 'Warehouse Manager': 34
-05:21:15 indeed 'Logistics Manager': 73
-05:21:15 reed 'Logistics Manager': 7
-05:21:17 indeed 'Supply Chain Manager': 60
-05:21:18 reed 'Supply Chain Manager': 4
-05:21:20 indeed 'Continuous Improvement Manager': 11
-05:21:20 reed 'Continuous Improvement Manager': 2
-05:21:23 indeed 'Engineering Manager': 100
-05:21:23 reed 'Engineering Manager': 15
-05:21:26 indeed 'Maintenance Manager': 100
-05:21:26 reed 'Maintenance Manager': 16
-05:21:29 indeed 'Maintenance Engineer': 100
-05:21:29 reed 'Maintenance Engineer': 32
-05:21:31 indeed 'Multi Skilled Maintenance Engineer': 45
-05:21:32 reed 'Multi Skilled Maintenance Engineer': 4
-05:21:35 indeed 'Maintenance Technician': 100
-05:21:35 reed 'Maintenance Technician': 60
-05:21:37 indeed 'Electrical Engineer': 100
-05:21:38 reed 'Electrical Engineer': 26
-05:21:40 indeed 'Mechanical Engineer': 100
-05:21:41 reed 'Mechanical Engineer': 21
-05:21:43 indeed 'Facilities Manager': 100
-05:21:44 reed 'Facilities Manager': 12
-05:21:46 indeed 'Facilities Engineer': 15
-05:21:47 reed 'Facilities Engineer': 2
-05:21:49 indeed 'Project Engineer': 100
-05:21:49 reed 'Project Engineer': 17
-05:21:52 indeed 'Design Engineer': 100
-05:21:52 reed 'Design Engineer': 46
-05:21:55 indeed 'Quality Manager': 100
-05:21:55 reed 'Quality Manager': 13
-05:21:58 indeed 'Quality Engineer': 100
-05:21:58 reed 'Quality Engineer': 6
-05:22:01 indeed 'Health and Safety Manager': 56
-05:22:01 reed 'Health and Safety Manager': 77
-05:22:04 indeed 'Technical Manager': 100
-05:22:04 reed 'Technical Manager': 6
-05:22:07 indeed 'HR Manager': 100
-05:22:07 reed 'HR Manager': 77
-05:22:10 indeed 'HR Advisor': 100
-05:22:10 reed 'HR Advisor': 88
-05:22:13 indeed 'HR Business Partner': 100
-05:22:13 reed 'HR Business Partner': 53
-05:22:16 indeed 'Office Manager': 100
-05:22:16 reed 'Office Manager': 20
-05:22:19 indeed 'Finance Manager': 100
-05:22:19 reed 'Finance Manager': 63
-05:22:22 indeed 'Management Accountant': 100
-05:22:22 reed 'Management Accountant': 29
-05:22:25 indeed 'Financial Controller': 100
-05:22:25 reed 'Financial Controller': 23
-05:22:28 indeed 'Sales Manager': 100
-05:22:28 reed 'Sales Manager': 51
-05:22:31 indeed 'Business Development Manager': 100
-05:22:31 reed 'Business Development Manager': 47
-05:22:34 indeed 'Account Manager': 100
-05:22:34 reed 'Account Manager': 41
-05:22:37 indeed 'Marketing Manager': 100
-05:22:38 reed 'Marketing Manager': 82
-05:22:40 indeed 'Content Creator': 100
-05:22:41 reed 'Content Creator': 7
-05:22:43 indeed 'Customer Service Manager': 76
-05:22:44 reed 'Customer Service Manager': 5
-05:22:51 funnel raw 4889, title_fit 3225, pay_27k_plus 1327, not_agency 1246, not_big 644, right_sector 622, deduped 519, not_mass_hiring 501, age_ok 395, new_companies 302
-05:22:51 leads 30 (Engineering 15, Office 15), carried over 30, jobs kept 395, towns cached 140
+05:25:48 indeed 'Operations Manager': 100
+05:25:48 reed 'Operations Manager': 59
+05:25:51 indeed 'Operations Director': 100
+05:25:52 reed 'Operations Director': 26
+05:25:54 indeed 'General Manager': 100
+05:25:55 reed 'General Manager': 68
+05:25:58 indeed 'Managing Director': 100
+05:25:58 reed 'Managing Director': 49
+05:26:01 indeed 'Site Manager': 100
+05:26:01 reed 'Site Manager': 27
+05:26:04 indeed 'Plant Manager': 49
+05:26:04 reed 'Plant Manager': 1
+05:26:07 indeed 'Production Manager': 100
+05:26:07 reed 'Production Manager': 23
+05:26:10 indeed 'Shift Manager': 100
+05:26:10 reed 'Shift Manager': 63
+05:26:13 indeed 'Warehouse Manager': 100
+05:26:13 reed 'Warehouse Manager': 35
+05:26:16 indeed 'Logistics Manager': 74
+05:26:16 reed 'Logistics Manager': 14
+05:26:19 indeed 'Supply Chain Manager': 59
+05:26:19 reed 'Supply Chain Manager': 6
+05:26:22 indeed 'Continuous Improvement Manager': 12
+05:26:22 reed 'Continuous Improvement Manager': 2
+05:26:25 indeed 'Engineering Manager': 100
+05:26:25 reed 'Engineering Manager': 15
+05:26:28 indeed 'Maintenance Manager': 100
+05:26:28 reed 'Maintenance Manager': 20
+05:26:31 indeed 'Maintenance Engineer': 100
+05:26:32 reed 'Maintenance Engineer': 37
+05:26:34 indeed 'Multi Skilled Maintenance Engineer': 50
+05:26:34 reed 'Multi Skilled Maintenance Engineer': 4
+05:26:37 indeed 'Maintenance Technician': 100
+05:26:37 reed 'Maintenance Technician': 75
+05:26:40 indeed 'Electrical Engineer': 100
+05:26:41 reed 'Electrical Engineer': 28
+05:26:43 indeed 'Mechanical Engineer': 100
+05:26:44 reed 'Mechanical Engineer': 23
+05:26:46 indeed 'Facilities Manager': 100
+05:26:47 reed 'Facilities Manager': 15
+05:26:49 indeed 'Facilities Engineer': 16
+05:26:49 reed 'Facilities Engineer': 2
+05:26:52 indeed 'Project Engineer': 100
+05:26:53 reed 'Project Engineer': 17
+05:26:55 indeed 'Design Engineer': 100
+05:26:56 reed 'Design Engineer': 47
+05:26:59 indeed 'Quality Manager': 100
+05:26:59 reed 'Quality Manager': 15
+05:27:02 indeed 'Quality Engineer': 100
+05:27:02 reed 'Quality Engineer': 5
+05:27:05 indeed 'Health and Safety Manager': 54
+05:27:05 reed 'Health and Safety Manager': 80
+05:27:08 indeed 'Technical Manager': 100
+05:27:08 reed 'Technical Manager': 7
+05:27:11 indeed 'HR Manager': 100
+05:27:11 reed 'HR Manager': 79
+05:27:14 indeed 'HR Advisor': 100
+05:27:14 reed 'HR Advisor': 88
+05:27:17 indeed 'HR Business Partner': 100
+05:27:17 reed 'HR Business Partner': 52
+05:27:20 indeed 'Office Manager': 100
+05:27:21 reed 'Office Manager': 23
+05:27:24 indeed 'Finance Manager': 100
+05:27:24 reed 'Finance Manager': 66
+05:27:27 indeed 'Management Accountant': 100
+05:27:27 reed 'Management Accountant': 25
+05:27:30 indeed 'Financial Controller': 100
+05:27:30 reed 'Financial Controller': 23
+05:27:33 indeed 'Sales Manager': 100
+05:27:33 reed 'Sales Manager': 49
+05:27:36 indeed 'Business Development Manager': 100
+05:27:36 reed 'Business Development Manager': 51
+05:27:39 indeed 'Account Manager': 100
+05:27:40 reed 'Account Manager': 40
+05:27:42 indeed 'Marketing Manager': 100
+05:27:43 reed 'Marketing Manager': 72
+05:27:46 indeed 'Content Creator': 100
+05:27:46 reed 'Content Creator': 8
+05:27:49 indeed 'Customer Service Manager': 77
+05:27:49 reed 'Customer Service Manager': 6
+05:27:52 indeed 'Procurement Manager': 100
+05:27:52 reed 'Procurement Manager': 32
+05:27:55 indeed 'Purchasing Manager': 40
+05:27:55 reed 'Purchasing Manager': 2
+05:27:58 indeed 'Senior Buyer': 67
+05:27:58 reed 'Senior Buyer': 4
+05:28:01 indeed 'Category Manager': 100
+05:28:01 reed 'Category Manager': 17
+05:28:04 indeed 'Commercial Manager': 100
+05:28:05 reed 'Commercial Manager': 21
+05:28:08 indeed 'Commercial Director': 100
+05:28:08 reed 'Commercial Director': 6
+05:28:11 indeed 'Sales Director': 100
+05:28:11 reed 'Sales Director': 17
+05:28:14 indeed 'Head of Sales': 100
+05:28:14 reed 'Head of Sales': 6
+05:28:17 indeed 'Key Account Manager': 100
+05:28:17 reed 'Key Account Manager': 4
+05:28:20 indeed 'National Account Manager': 41
+05:28:20 reed 'National Account Manager': 2
+05:28:23 indeed 'Area Sales Manager': 55
+05:28:23 reed 'Area Sales Manager': 8
+05:28:25 indeed 'Internal Sales Manager': 7
+05:28:26 reed 'Internal Sales Manager': 1
+05:28:28 indeed 'Finance Director': 100
+05:28:29 reed 'Finance Director': 18
+05:28:32 indeed 'Head of Finance': 100
+05:28:32 reed 'Head of Finance': 13
+05:28:34 indeed 'Credit Control Manager': 10
+05:28:34 reed 'Credit Control Manager': 0
+05:28:44 funnel raw 6207, title_fit 4272, pay_27k_plus 1638, not_agency 1534, not_big 807, right_sector 772, deduped 640, not_mass_hiring 625, age_ok 489, new_companies 372
+05:28:44 leads 30 (Office 20, Engineering 10), carried over 60, jobs kept 489, towns cached 157
