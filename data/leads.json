@@ -1,8 +1,518 @@
 {
- "run_date": "2026-11-12",
+ "run_date": "2026-11-13",
  "new_today": 30,
  "carried": 60,
  "leads": [
+  {
+   "doc_id": "okja-bakery-head-of-bakery-operations-production",
+   "data": {
+    "company": "okja bakery",
+    "role": "Head of Bakery Operations & Production",
+    "location": "London",
+    "salaryText": "\u00a345,000 to \u00a365,000",
+    "salary": 45000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=8c08e295d4fee4d9",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 65: Live 7 days; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "command-head-of-business",
+   "data": {
+    "company": "Command",
+    "role": "Head of Business",
+    "location": "Coventry",
+    "salaryText": "\u00a370,000 to \u00a3120,000",
+    "salary": 70000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=32018c1a54defcc0",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 63: Live 16 days; postcode CV1 5RN",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "creation-group-production-manager",
+   "data": {
+    "company": "Creation Group",
+    "role": "Production Manager",
+    "location": "East London",
+    "salaryText": "\u00a340,000 to \u00a345,000",
+    "salary": 40000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=4864eacb90861c5d",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 63: Live 15 days; Size 51 to 200",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "southport-dental-services-dental-laboratory-operations-production-manager",
+   "data": {
+    "company": "Southport Dental Services",
+    "role": "Dental Laboratory Operations & Production Manager",
+    "location": "Southport",
+    "salaryText": "\u00a340,000 to \u00a350,000",
+    "salary": 40000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=ccb055e32e3958db",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 63: Live 7 days; postcode PR8 1PE",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "urbanbubble-general-manager",
+   "data": {
+    "company": "urbanbubble",
+    "role": "General Manager",
+    "location": "London",
+    "salaryText": "\u00a366,000 to \u00a375,900",
+    "salary": 66000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=1bc107d03681209c",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 62: Live 7 days; Size 51 to 200; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "matcon-ltd-quality-manager-and-global-compliance-lead",
+   "data": {
+    "company": "Matcon Ltd",
+    "role": "Quality Manager and Global Compliance Lead",
+    "location": "Evesham",
+    "salaryText": "\u00a360,000 to \u00a375,000",
+    "salary": 60000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=8f2c6828836f6201",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 60: Live 7 days; postcode WR11 4RS",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "polaris-head-of-care",
+   "data": {
+    "company": "Polaris",
+    "role": "Head of Care",
+    "location": "Carlisle",
+    "salaryText": "\u00a350,000 to \u00a360,000",
+    "salary": 50000,
+    "advertUrl": "https://www.reed.co.uk/jobs/head-of-care/57540736",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 58: Live 7 days; postcode CA3 8ES",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "indigo-food-group-limited-production-shift-manager",
+   "data": {
+    "company": "Indigo Food Group Limited",
+    "role": "Production Shift Manager",
+    "location": "Avonmouth",
+    "salaryText": "\u00a340,000 to \u00a348,000",
+    "salary": 40000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=6b53505210dba7f3",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 58: Live 7 days; 2 roles open; postcode BS11 9EN",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "southwest-metal-finishing-technical-manager",
+   "data": {
+    "company": "Southwest Metal Finishing",
+    "role": "Technical Manager",
+    "location": "Exeter",
+    "salaryText": "\u00a353,500",
+    "salary": 53500,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=81789c598d87bd33",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 57: Live 8 days; Size 201 to 500; postcode EX4 3QR",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "day-lewis-pharmacy-general-manager",
+   "data": {
+    "company": "Day Lewis Pharmacy",
+    "role": "General Manager",
+    "location": "London",
+    "salaryText": "\u00a350,000 to \u00a360,000",
+    "salary": 50000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=82a239691da8b920",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Engineering",
+    "notes": "Job Watcher 56: Live 21 days; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "enertech-fm-limited-financial-controller",
+   "data": {
+    "company": "Enertech FM Limited",
+    "role": "Financial Controller",
+    "location": "Hebburn",
+    "salaryText": "\u00a345,000 to \u00a355,000",
+    "salary": 45000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=27ade739f5324505",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 70: Live 7 days; postcode NE31 1LB",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "ita-channel-director",
+   "data": {
+    "company": "ITA",
+    "role": "Channel Director",
+    "location": "Luton",
+    "salaryText": "\u00a360,000 to \u00a380,000",
+    "salary": 60000,
+    "advertUrl": "https://www.reed.co.uk/jobs/channel-director/57539719",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 67: Live 7 days; 2 roles open; postcode LU1 2AT",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "albatross-head-of-go-to-market",
+   "data": {
+    "company": "Albatross",
+    "role": "Head of Go-To-Market",
+    "location": "London",
+    "salaryText": "\u00a3180,000 to \u00a3250,000",
+    "salary": 180000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=0fa117356f63efda",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 21 days; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "scotland-excel-category-manager-digital",
+   "data": {
+    "company": "Scotland Excel",
+    "role": "Category Manager (Digital)",
+    "location": "Paisley",
+    "salaryText": "\u00a361,666 to \u00a365,535",
+    "salary": 61700,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=d8cf510588a7d8d9",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 15 days; postcode PA1 2DJ",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "advania-uk-channel-sales-manager",
+   "data": {
+    "company": "Advania UK",
+    "role": "Channel Sales Manager",
+    "location": "London",
+    "salaryText": "\u00a360,000 to \u00a370,000",
+    "salary": 60000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=848a466ace722692",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 14 days; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "scarlet-account-manager-native-mandarin-speaker",
+   "data": {
+    "company": "Scarlet",
+    "role": "Account Manager, native Mandarin speaker",
+    "location": "London",
+    "salaryText": "\u00a360,000 to \u00a370,000",
+    "salary": 60000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=e71ebf8f27f4199c",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 11 days; Size 11 to 50; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "daikin-applied-uk-ltd-national-account-sales-manager",
+   "data": {
+    "company": "Daikin Applied UK Ltd",
+    "role": "National Account Sales Manager",
+    "location": "Remote",
+    "salaryText": "\u00a360,000 to \u00a370,000",
+    "salary": 60000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=a5b9f6298df7545c",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 9 days",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "xelix-finance-manager",
+   "data": {
+    "company": "Xelix",
+    "role": "Finance Manager",
+    "location": "London",
+    "salaryText": "\u00a360,000 to \u00a385,000",
+    "salary": 60000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=ef6e06bb0c1577fd",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 9 days; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "gresham-group-head-of-hr-business-partnering",
+   "data": {
+    "company": "Gresham Group",
+    "role": "Head of HR Business Partnering",
+    "location": "London",
+    "salaryText": "\u00a385,000 to \u00a390,000",
+    "salary": 85000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=7fcfec43df784754",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 9 days; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "watsham-consulting-finance-manager",
+   "data": {
+    "company": "Watsham Consulting",
+    "role": "Finance Manager",
+    "location": "Hammersmith and Fulham",
+    "salaryText": "\u00a350,000 to \u00a355,000",
+    "salary": 50000,
+    "advertUrl": "https://www.reed.co.uk/jobs/finance-manager/57534418",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 8 days; postcode SW6 4LZ",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "stonewater-development-finance-manager",
+   "data": {
+    "company": "Stonewater",
+    "role": "Development Finance Manager",
+    "location": "Oxford",
+    "salaryText": "\u00a356,000",
+    "salary": 56000,
+    "advertUrl": "https://www.reed.co.uk/jobs/development-finance-manager/57532567",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 8 days; postcode OX1 4DS",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "circuithub-group-financial-accountant",
+   "data": {
+    "company": "CircuitHub",
+    "role": "Group Financial Accountant",
+    "location": "London",
+    "salaryText": "\u00a375,000 to \u00a385,000",
+    "salary": 75000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=3132d7f703195702",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 8 days; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "resonate-strategic-account-director-wales-south-of-england",
+   "data": {
+    "company": "Resonate",
+    "role": "Strategic Account Director (Wales & South of England)",
+    "location": "London",
+    "salaryText": "\u00a3110,000 to \u00a3120,000",
+    "salary": 110000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=74b43f5630f88646",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 65: Live 7 days; Size 51 to 200; postcode WC2N 5DU",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "community-action-suffolk-head-of-finance",
+   "data": {
+    "company": "Community Action Suffolk",
+    "role": "Head of Finance",
+    "location": "Ipswich",
+    "salaryText": "\u00a329,560 to \u00a349,266",
+    "salary": 29600,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=20087e21340c4c70",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 64: Live 21 days; postcode IP1 1PN",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "amarinth-procurement-manager",
+   "data": {
+    "company": "Amarinth",
+    "role": "Procurement Manager",
+    "location": "Rendlesham",
+    "salaryText": "\u00a345,000 to \u00a355,000",
+    "salary": 45000,
+    "advertUrl": "https://www.reed.co.uk/jobs/procurement-manager/57498295",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 64: Live 17 days; postcode IP12 2TW",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "trans-data-management-limited-contract-commercial-manager",
+   "data": {
+    "company": "Trans Data Management Limited",
+    "role": "Contract & Commercial Manager",
+    "location": "Crawley",
+    "salaryText": "\u00a358,000 to \u00a363,000",
+    "salary": 58000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=1171ecce7bac49c1",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 64: Live 7 days; postcode RH10 1HB",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "clarendon-executive-global-procurement-manager",
+   "data": {
+    "company": "Clarendon Executive",
+    "role": "Global Procurement Manager",
+    "location": "Chorley",
+    "salaryText": "\u00a355,000 to \u00a365,000",
+    "salary": 55000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=0f0493c8ff87e987",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 63: Live 11 days; postcode PR7 1DP",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "usay-compare-sales-manager",
+   "data": {
+    "company": "Usay Compare",
+    "role": "Sales Manager",
+    "location": "Cotswold",
+    "salaryText": "\u00a344,999 to \u00a345,000",
+    "salary": 45000,
+    "advertUrl": "https://www.reed.co.uk/jobs/sales-manager/57524478",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 63: Live 9 days; postcode GL7 5XZ",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "procure-plus-procurement-manager",
+   "data": {
+    "company": "Procure Plus",
+    "role": "Procurement Manager",
+    "location": "Stretford",
+    "salaryText": "\u00a354,000 to \u00a355,000",
+    "salary": 54000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=642dde5fe90ceeb9",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 63: Live 9 days; Size 51 to 200; postcode M32 0LG",
+    "addedAt": "2026-11-13"
+   }
+  },
+  {
+   "doc_id": "messiah-freight-distributors-uk-ltd-purchasing-manager",
+   "data": {
+    "company": "Messiah Freight & Distributors UK ltd",
+    "role": "Purchasing Manager",
+    "location": "Edgware",
+    "salaryText": "\u00a355,000 to \u00a360,000",
+    "salary": 55000,
+    "advertUrl": "https://uk.indeed.com/viewjob?jk=9a0c38c312d709a1",
+    "source": "Job Watcher",
+    "status": "Review",
+    "contactId": "",
+    "track": "Office",
+    "notes": "Job Watcher 63: Live 9 days; postcode HA8 8NQ",
+    "addedAt": "2026-11-13"
+   }
+  },
   {
    "doc_id": "newtral-group-holdings-construction-lead-operations-director-civil-water-engineering",
    "data": {
@@ -16,8 +526,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 66: Live 7 days; postcode TS1 2LA",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 66: Live 7 days; postcode TS1 2LA; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -33,8 +543,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 60: Live 7 days; postcode BH15 1QE",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 60: Live 7 days; postcode BH15 1QE; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -50,8 +560,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 58: Live 21 days; postcode AL3 5DL",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 58: Live 21 days; postcode AL3 5DL; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -67,8 +577,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 58: Live 9 days; Size Decline to state; postcode WC2N 5DU",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 58: Live 9 days; Size Decline to state; postcode WC2N 5DU; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -84,8 +594,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 56: Live 7 days; postcode NW10 7XR",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 56: Live 7 days; postcode NW10 7XR; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -101,8 +611,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 56: Live 7 days; postcode LS1 3AJ",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 56: Live 7 days; postcode LS1 3AJ; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -118,8 +628,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 56: Live 7 days; postcode LU1 2AT",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 56: Live 7 days; postcode LU1 2AT; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -135,8 +645,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 55: Live 6 days; postcode HU1 2AA",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 55: Live 6 days; postcode HU1 2AA; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -152,8 +662,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 54: Live 18 days; 2 roles open; postcode LA1 1ET",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 54: Live 18 days; 2 roles open; postcode LA1 1ET; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -169,8 +679,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Engineering",
-    "notes": "Job Watcher 53: Live 21 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 53: Live 21 days; postcode WC2N 5DU; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -186,8 +696,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 75: Live 7 days; postcode LS1 3AJ",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 75: Live 7 days; postcode LS1 3AJ; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -203,8 +713,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 74: Live 17 days; postcode B97 4QN",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 74: Live 17 days; postcode B97 4QN; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -220,8 +730,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 73: Live 17 days; 3 roles open; Size 51 to 200; postcode G4 0EQ",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 73: Live 17 days; 3 roles open; Size 51 to 200; postcode G4 0EQ; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -237,8 +747,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 71: Live 10 days; postcode NE8 1LS",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 71: Live 10 days; postcode NE8 1LS; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -254,8 +764,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 70: Live 15 days",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 70: Live 15 days; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -271,8 +781,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 70: Live 14 days; postcode GU21 6BL",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 70: Live 14 days; postcode GU21 6BL; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -288,8 +798,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 69: Live 20 days; postcode SW4 7UR",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 69: Live 20 days; postcode SW4 7UR; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -305,8 +815,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 69: Live 15 days; postcode SN5 7EX",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 69: Live 15 days; postcode SN5 7EX; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -322,8 +832,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 68: Live 17 days; postcode DG9 7JF",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 68: Live 17 days; postcode DG9 7JF; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -339,8 +849,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 68: Live 14 days; postcode SN1 1QP",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 68: Live 14 days; postcode SN1 1QP; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -356,8 +866,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 68: Live 13 days; postcode ST16 2JA",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 68: Live 13 days; postcode ST16 2JA; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -373,8 +883,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 68: Live 8 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 68: Live 8 days; postcode WC2N 5DU; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -390,8 +900,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 68: Live 8 days; Size 11 to 50; postcode L20 3EF",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 68: Live 8 days; Size 11 to 50; postcode L20 3EF; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -407,8 +917,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 66: Live 11 days; postcode M5 4HE",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 66: Live 11 days; postcode M5 4HE; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -424,8 +934,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 66: Live 10 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 66: Live 10 days; postcode WC2N 5DU; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -441,8 +951,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 66: Live 10 days; postcode PR4 0LJ",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 66: Live 10 days; postcode PR4 0LJ; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -458,8 +968,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 66: Live 8 days",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 66: Live 8 days; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -475,8 +985,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 65: Live 20 days; postcode WC2N 5DU",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 65: Live 20 days; postcode WC2N 5DU; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -492,8 +1002,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 65: Live 17 days; postcode CF10 1GP",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 65: Live 17 days; postcode CF10 1GP; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -509,8 +1019,8 @@
     "status": "Review",
     "contactId": "",
     "track": "Office",
-    "notes": "Job Watcher 65: Live 16 days; postcode SK1 3DJ",
-    "addedAt": "2026-11-12"
+    "notes": "Job Watcher 65: Live 16 days; postcode SK1 3DJ; first listed 2026-11-12",
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -527,7 +1037,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 75: Live 14 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -544,7 +1054,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 69: Live 20 days; 4 roles open; postcode SO14 7FE; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -561,7 +1071,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 68: Live 14 days; 2 roles open; postcode ML1 1BB; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -578,7 +1088,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 68: Live 7 days; postcode SG5 1JN; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -595,7 +1105,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 65: Live 21 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -612,7 +1122,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 63: Live 19 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -629,7 +1139,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 63: Live 8 days; Size 201 to 500; postcode EH33 1LH; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -646,7 +1156,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 63: Live 8 days; 2 roles open; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -663,7 +1173,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 62: Live 7 days; postcode S9 1RG; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -680,7 +1190,7 @@
     "contactId": "",
     "track": "Engineering",
     "notes": "Job Watcher 58: Live 21 days; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -697,7 +1207,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 85: Live 13 days; 2 roles open; postcode SG8 0DL; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -714,7 +1224,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 84: Live 13 days; postcode SE1 1DR; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -731,7 +1241,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 80: Live 21 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -748,7 +1258,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 80: Live 20 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -765,7 +1275,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 80: Live 11 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -782,7 +1292,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 80: Live 8 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -799,7 +1309,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 80: Live 7 days; Size 51 to 200; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -816,7 +1326,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 78: Live 14 days; Size 201 to 500; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -833,7 +1343,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 78: Live 12 days; 2 roles open; Size 201 to 500; postcode WS1 1DG; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -850,7 +1360,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 75: Live 14 days; postcode NE9 6PX; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -867,7 +1377,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 75: Live 13 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -884,7 +1394,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 75: Live 7 days; postcode IG10 1LJ; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -901,7 +1411,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 74: Live 9 days; postcode B97 4QN; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -918,7 +1428,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 72: Live 19 days; postcode SW15 2SH; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -935,7 +1445,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 72: Live 7 days; postcode LA1 1ET; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -952,7 +1462,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 71: Live 15 days; postcode WC2N 5DU; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -969,7 +1479,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 71: Live 10 days; postcode BA2 4AP; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -986,7 +1496,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 71: Live 8 days; Size 11 to 50; postcode CF10 1GP; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -1003,7 +1513,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 71: Live 8 days; postcode B60 2BN; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   },
   {
@@ -1020,517 +1530,7 @@
     "contactId": "",
     "track": "Office",
     "notes": "Job Watcher 70: Live 20 days; postcode SA15 3AW; first listed 2026-11-11",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "ab-turnkey-solutions-limited-production-manager",
-   "data": {
-    "company": "AB Turnkey Solutions Limited",
-    "role": "Production Manager",
-    "location": "Bletchley and Fenny Stratford",
-    "salaryText": "\u00a350,000 to \u00a360,000",
-    "salary": 50000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=51c353d44c1c648b",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 66: Live 7 days; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "ecousta-ltd-production-operations-manager",
-   "data": {
-    "company": "Ecousta Ltd",
-    "role": "Production & Operations Manager",
-    "location": "Hailsham",
-    "salaryText": "\u00a345,000 to \u00a355,000",
-    "salary": 45000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=aee70b92035ae60a",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 65: Live 7 days; postcode BN27 1BW; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "blue-cube-europe-ltd-service-maintenance-manager",
-   "data": {
-    "company": "Blue Cube (Europe) Ltd",
-    "role": "Service & Maintenance Manager",
-    "location": "Sharnbrook",
-    "salaryText": "\u00a335,000 to \u00a342,000",
-    "salary": 35000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=086f3ec08c1696e1",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 61: Live 13 days; postcode MK44 1PB; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "acqua-plus-developments-limited-property-maintenance-manager",
-   "data": {
-    "company": "Acqua Plus Developments Limited",
-    "role": "Property Maintenance Manager",
-    "location": "Harrow on the Hill",
-    "salaryText": "\u00a330,000 to \u00a340,000",
-    "salary": 30000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=e03df322e201d5c7",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 60: Live 7 days; postcode HA1 3LP; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "norbev-production-shift-manager",
-   "data": {
-    "company": "Norbev",
-    "role": "Production Shift Manager",
-    "location": "Ballymena",
-    "salaryText": "\u00a348,000 to \u00a352,000",
-    "salary": 48000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=c1c9269c529cba03",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 56: Live 7 days; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "spa-parts-vortex-group-operations-manager",
-   "data": {
-    "company": "Spa Parts Vortex",
-    "role": "Group Operations Manager",
-    "location": "Portsmouth",
-    "salaryText": "\u00a350,000 to \u00a360,000",
-    "salary": 50000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=58a7a06416e97a1b",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 56: Live 7 days; postcode PO1 2DX; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "fia-formula-e-championship-broadcast-technical-manager",
-   "data": {
-    "company": "FIA Formula E Championship",
-    "role": "Broadcast Technical Manager",
-    "location": "London",
-    "salaryText": "\u00a340,000 to \u00a346,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=d6594bfa947b24ea",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 20 days; Size 51 to 200; postcode WC2N 5DU; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "mccrory-limited-project-engineer",
-   "data": {
-    "company": "McCrory Limited",
-    "role": "Project Engineer",
-    "location": "Folkestone",
-    "salaryText": "\u00a355,000 to \u00a365,000",
-    "salary": 55000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=8bf573af4e69eb5e",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 17 days; postcode CT20 1HE; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "the-institution-of-structural-engineers-mainstream-central-london-consultancy-civil-infrastructure-project-engineer",
-   "data": {
-    "company": "The Institution Of Structural Engineers",
-    "role": "MAINSTREAM CENTRAL LONDON CONSULTANCY: Civil Infrastructure Project Engineer",
-    "location": "London",
-    "salaryText": "\u00a340,000 to \u00a350,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=b48f7636382692ad",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 15 days; 2 roles open; Size 51 to 200; postcode WC2N 5DU; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "aztec-event-services-venue-technical-manager",
-   "data": {
-    "company": "Aztec Event Services",
-    "role": "Venue Technical Manager",
-    "location": "London",
-    "salaryText": "\u00a340,000 to \u00a345,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=fb42cb7a3cc5407a",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 12 days; Size 51 to 200; postcode WC2N 5DU; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "the-optimal-group-supply-chain-manager-suppliers-subcontractors",
-   "data": {
-    "company": "The Optimal Group",
-    "role": "Supply Chain Manager - Suppliers & Subcontractors",
-    "location": "London",
-    "salaryText": "\u00a340,000 to \u00a345,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=04d4badeb13e233c",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 12 days; Size 11 to 50; postcode WC2N 5DU; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "the-pack-smart-group-head-of-delivery",
-   "data": {
-    "company": "The Pack Smart Group",
-    "role": "Head of Delivery",
-    "location": "Coventry",
-    "salaryText": "\u00a340,000 to \u00a350,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=94da2d49ad5c7bee",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 12 days; postcode CV1 5RN; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "thames-valley-buses-psv-technician",
-   "data": {
-    "company": "Thames Valley Buses",
-    "role": "PSV Technician",
-    "location": "Bracknell",
-    "salaryText": "\u00a325.00 an hour",
-    "salary": 48800,
-    "advertUrl": "https://www.reed.co.uk/jobs/psv-technician/57507200",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 11 days; postcode RG12 1DS; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "reliant-direct-supply-chain-manager",
-   "data": {
-    "company": "Reliant Direct",
-    "role": "Supply Chain Manager",
-    "location": "Blackpool",
-    "salaryText": "\u00a340,000 to \u00a345,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=209da89f9188ff76",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 7 days; postcode FY1 2AA; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "mcs-cleaning-maintenance-ltd-operations-manager",
-   "data": {
-    "company": "MCS Cleaning & Maintenance Ltd",
-    "role": "Operations Manager",
-    "location": "North West Leicestershire",
-    "salaryText": "\u00a340,000 to \u00a350,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=3836e7a5c62a6c2e",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Engineering",
-    "notes": "Job Watcher 53: Live 7 days; Size 201 to 500; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "rfa-contractors-ltd-account-manager-facilities-building-maintenance",
-   "data": {
-    "company": "RFA Contractors Ltd",
-    "role": "Account Manager \u2013 Facilities & Building Maintenance",
-    "location": "Southampton",
-    "salaryText": "\u00a345,000",
-    "salary": 45000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=ddebe7c1bda457a3",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 55: Live 8 days; postcode SO14 7FE; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "crown-worldwide-group-channel-sales-manager-it-lifecycle-services",
-   "data": {
-    "company": "Crown Worldwide Group",
-    "role": "Channel Sales Manager - IT Lifecycle Services",
-    "location": "Enfield",
-    "salaryText": "\u00a360,000",
-    "salary": 60000,
-    "advertUrl": "https://www.reed.co.uk/jobs/channel-sales-manager-it-lifecycle-services/57519121",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 54: Live 7 days; postcode N9 0BD; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "leeds-survivor-led-crisis-service-operations-director-children-and-young-peoples-services-and-dial-house-at-touchstone",
-   "data": {
-    "company": "Leeds Survivor Led Crisis Service",
-    "role": "Operations Director Children and Young People\u2019s Services and Dial House at Touchstone",
-    "location": "Leeds",
-    "salaryText": "\u00a333,119",
-    "salary": 33100,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=a1a6bfeebc6e34b5",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 51: Live 7 days; postcode LS1 3AJ; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "wonderful-payments-ltd-finance-manager",
-   "data": {
-    "company": "Wonderful Payments Ltd",
-    "role": "Finance Manager",
-    "location": "London",
-    "salaryText": "\u00a355,000 to \u00a365,000",
-    "salary": 55000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=eac4fbd29707a81e",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 48: Live 7 days; postcode WC2N 5DU; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "a-a-automotive-limited-commercial-and-industrial-maintenance-field-engineer",
-   "data": {
-    "company": "A&A Automotive Limited",
-    "role": "Commercial and Industrial Maintenance Field Engineer",
-    "location": "Banbury",
-    "salaryText": "\u00a340,000 to \u00a348,000",
-    "salary": 40000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=e68d76bd92c11237",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 48: Live 7 days; postcode OX16 5QD; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "virginia-hayward-ltd-analytical-marketing-manager",
-   "data": {
-    "company": "Virginia Hayward Ltd",
-    "role": "Analytical Marketing Manager",
-    "location": "Shaftesbury",
-    "salaryText": "\u00a350,000 to \u00a360,000",
-    "salary": 50000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=064346ef14b8988e",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 13 days; postcode SP7 8AA; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "st-elizabeth-s-centre-hr-business-partner",
-   "data": {
-    "company": "St Elizabeth's Centre",
-    "role": "HR Business Partner",
-    "location": "Much Hadham",
-    "salaryText": "\u00a351,210 to \u00a353,667",
-    "salary": 51200,
-    "advertUrl": "https://www.reed.co.uk/jobs/hr-business-partner/57508583",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 11 days; postcode SG10 6EW; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "hire-intelligence-account-manager",
-   "data": {
-    "company": "Hire Intelligence",
-    "role": "Account Manager",
-    "location": "Ealing",
-    "salaryText": "\u00a338,000 to \u00a343,000",
-    "salary": 38000,
-    "advertUrl": "https://www.reed.co.uk/jobs/account-manager/57507071",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 11 days; postcode W3 7QE; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "naail-co-chartered-certified-accountants-accounts-senior-client-accounts-manager",
-   "data": {
-    "company": "Naail & Co Chartered Certified Accountants",
-    "role": "Accounts Senior / Client Accounts Manager",
-    "location": "Lambeth",
-    "salaryText": "\u00a338,000 to \u00a345,000",
-    "salary": 38000,
-    "advertUrl": "https://www.reed.co.uk/jobs/accounts-senior-client-accounts-manager/57509336",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 11 days; postcode SE11 6DX; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "pcr-digital-marketing-manager-b2b-saas-mobile-applications",
-   "data": {
-    "company": "PCR Digital",
-    "role": "Marketing Manager \u2013 B2B SaaS & Mobile Applications",
-    "location": "London",
-    "salaryText": "\u00a350,000 to \u00a360,000",
-    "salary": 50000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=d1c1c800621da5d2",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 46: Live 7 days; Size 11 to 50; postcode WC2N 5DU; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "araz-gateway-ltd-hr-manager",
-   "data": {
-    "company": "Araz Gateway Ltd",
-    "role": "HR Manager",
-    "location": "Stanford-le-Hope",
-    "salaryText": "\u00a345,200 to \u00a355,000",
-    "salary": 45200,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=6eecbeffa8b88eb2",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 45: Live 17 days; postcode SS17 1AQ; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "humnize-business-development-manager",
-   "data": {
-    "company": "Humnize",
-    "role": "Business Development Manager",
-    "location": "Leeds",
-    "salaryText": "\u00a345,000 to \u00a355,000",
-    "salary": 45000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=111281c1bd433e6b",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 45: Live 16 days; postcode LS1 3AJ; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "ubico-hr-business-partner",
-   "data": {
-    "company": "Ubico",
-    "role": "HR Business Partner",
-    "location": "Cheltenham",
-    "salaryText": "\u00a348,738 to \u00a349,818",
-    "salary": 48700,
-    "advertUrl": "https://www.reed.co.uk/jobs/hr-business-partner/57502754",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 45: Live 13 days; postcode GL51 9JZ; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "english-trading-company-com-finance-manager",
-   "data": {
-    "company": "English Trading Company.com",
-    "role": "Finance Manager",
-    "location": "Chorley",
-    "salaryText": "\u00a345,000",
-    "salary": 45000,
-    "advertUrl": "https://uk.indeed.com/viewjob?jk=c57ef85bf5e54161",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 45: Live 8 days; postcode PR7 1DP; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
-   }
-  },
-  {
-   "doc_id": "sagoss-account-manager-customer-success-manager",
-   "data": {
-    "company": "Sagoss",
-    "role": "Account Manager / Customer Success Manager",
-    "location": "Henley-on-Thames",
-    "salaryText": "\u00a335,000 to \u00a340,000",
-    "salary": 35000,
-    "advertUrl": "https://www.reed.co.uk/jobs/account-manager-customer-success-manager/57520006",
-    "source": "Job Watcher",
-    "status": "Review",
-    "contactId": "",
-    "track": "Office",
-    "notes": "Job Watcher 45: Live 7 days; postcode RG9 4NR; first listed 2026-11-10",
-    "addedAt": "2026-11-12"
+    "addedAt": "2026-11-13"
    }
   }
  ]
