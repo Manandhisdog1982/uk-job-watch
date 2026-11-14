@@ -9,28 +9,55 @@ on:
     - cron: "40 5 * * 1-5"
   workflow_dispatch: {}
 
-permissions:
-  contents: write
+# Nothing is allowed unless a job asks for it. Every action is pinned to an exact commit (the version is in the comment).
+permissions: {}
 
 concurrency:
   group: job-watcher
   cancel-in-progress: false
 
 jobs:
+  # Runs other people's code (the packages in requirements.txt), so it can read this repository and nothing more:
+  # it holds no token that can write here. What it produces goes to the next job as a file.
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
+      # Exact versions, each checked against its hash: a package swapped or changed upstream fails here
+      - run: pip install --require-hashes -r requirements.txt
       - name: Collect jobs
         env:
           REED_API_KEY: ${{ secrets.REED_API_KEY }}
         run: python scrape.py
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: data
+          path: data/
+          retention-days: 1
+          if-no-files-found: error
+
+  # Saves the results. It may write to this repository, so it installs nothing and runs no Python.
+  save:
+    needs: scrape
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: data
+          path: data/
       - name: Save results
         run: |
           git config user.name "job-watcher"

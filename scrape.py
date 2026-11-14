@@ -1,4 +1,4 @@
-"""UK job board watcher, version 3.5.
+"""UK job board watcher, version 3.6.
 
 Runs each working day morning on GitHub Actions. Collects job ads from Indeed UK
 (python-jobspy) and Reed (official API, direct employers only), filters them
@@ -14,6 +14,9 @@ load did not happen does not lose those companies to the 60 day cooldown: the
 load skips any lead the CRM already holds.
 
 All filtering happens here, in Python, so the Claude side only loads rows.
+
+New in 3.6: company, title and location are cleaned as they arrive (one line, no
+hidden characters, no spreadsheet formulas) and a link must be https Indeed or Reed.
 
 Outputs in data/:
   leads.csv        today's shortlist, one row per company
@@ -80,6 +83,52 @@ def crm_slug(text):
     """Same id rule as the CRM page: lowercase, accents stripped, non alphanumerics to hyphens."""
     t = unicodedata.normalize("NFKD", str(text or "")).encode("ascii", "ignore").decode().lower()
     return re.sub(r"^-|-$", "", re.sub(r"[^a-z0-9]+", "-", t))[:120]
+
+
+# ---------- untrusted text ----------
+# Everything a job board returns was typed by a stranger and ends up in a spreadsheet, in the CRM,
+# in front of AI agents and in emails. Keep what real company names and job titles use, drop the rest.
+
+# Every character here is used by a real company or title in data/ (Exc@v8 Group, Team Leader [Signalling Maintenance]).
+# Left out: < > { } ` $ ^ ~ = \\ _ and every control, zero width and direction character.
+SAFE_PUNCT = set(" &'’‘.,()/+-–—:;#%£€!?|@*[]\"“”®™")
+FORMULA_START_RE = re.compile(r"^\s*[=+\-@\t\r][=+\-@\s]*")  # a cell starting like this is run as a formula
+JOB_URL_RE = re.compile(r"https://([A-Za-z0-9.-]+)/[A-Za-z0-9\-._~:/?#\[\]@!$&()*+,;=%]*")
+JOB_HOSTS = ("indeed.com", "indeed.co.uk", "reed.co.uk")
+
+
+def clean_text(value, limit):
+    """Advert text made safe to store and show: one line, no hidden characters, no leading
+    formula character, only letters, digits and the punctuation real names and titles use."""
+    if value is None or value is pd.NA or (isinstance(value, float) and value != value):
+        return value  # missing stays missing, so the checks further down behave as before
+    # NFKC folds look alike characters (full width "＝", ligatures) into their plain form; ™ is kept as it is
+    text = "™".join(unicodedata.normalize("NFKC", part) for part in str(value).split("™"))
+    out = []
+    for ch in text:
+        kind = unicodedata.category(ch)[0]
+        if ch in SAFE_PUNCT or kind in "LN":  # letters and digits in any language
+            out.append(ch)
+        elif kind not in "CM" or ch.isspace():  # control, zero width, bidi and stray accent marks are dropped
+            out.append(" ")  # line breaks, tabs and anything not on the list become a space
+    text = FORMULA_START_RE.sub("", " ".join("".join(out).split()))
+    return text[:limit].rstrip()
+
+
+def safe_url(value):
+    """An advert link, kept only when it is https on an Indeed or Reed address. Anything else is blank."""
+    m = JOB_URL_RE.fullmatch(value) if isinstance(value, str) and len(value) <= 500 else None
+    host = m.group(1).lower() if m else ""
+    return value if any(host == h or host.endswith("." + h) for h in JOB_HOSTS) else ""
+
+
+def write_csv(frame, path):
+    """Last line of defence: no text cell in a CSV may start a spreadsheet formula. Numbers are left alone."""
+    frame = frame.copy()
+    for col in frame.columns:
+        if not pd.api.types.is_numeric_dtype(frame[col]):
+            frame[col] = frame[col].map(lambda v: FORMULA_START_RE.sub("", v) if isinstance(v, str) else v)
+    frame.to_csv(path, index=False)
 
 
 AGENCY_NAMES = [norm(a) for a in CONFIG["agency_names"]]
@@ -370,16 +419,16 @@ def from_indeed(title):
         for _, r in df.iterrows():
             interval = r.get("interval")
             rows.append({
-                "company": r.get("company"),
-                "title": r.get("title"),
-                "location": r.get("location"),
+                "company": clean_text(r.get("company"), 100),
+                "title": clean_text(r.get("title"), 120),
+                "location": clean_text(r.get("location"), 100),
                 "site": "indeed",
-                "url": r.get("job_url"),
+                "url": safe_url(r.get("job_url")),
                 "date_posted": iso_or_blank(r.get("date_posted")),
                 "salary": salary_text(r.get("min_amount"), r.get("max_amount"), interval),
                 "annual": annual(r.get("min_amount") or r.get("max_amount"), interval),
                 "industry": r.get("company_industry"),
-                "size": r.get("company_num_employees"),
+                "size": clean_text(r.get("company_num_employees"), 40),  # shown in the flags
                 "description": r.get("description"),
                 "search": title,
             })
@@ -416,11 +465,11 @@ def from_reed(title):
             lo, hi = j.get("minimumSalary"), j.get("maximumSalary")
             interval = guess_interval(lo or hi)
             rows.append({
-                "company": j.get("employerName"),
-                "title": j.get("jobTitle"),
-                "location": j.get("locationName"),
+                "company": clean_text(j.get("employerName"), 100),
+                "title": clean_text(j.get("jobTitle"), 120),
+                "location": clean_text(j.get("locationName"), 100),
                 "site": "reed",
-                "url": j.get("jobUrl"),
+                "url": safe_url(j.get("jobUrl")),
                 "date_posted": posted.isoformat() if posted else "",
                 "salary": salary_text(lo, hi, interval),
                 "annual": annual(lo or hi, interval),
@@ -551,7 +600,7 @@ def main():
                                                  for r in jobs.to_dict("records")]])
 
     parts = jobs["location"].apply(split_location)
-    jobs["town"] = [p[0] for p in parts]
+    jobs["town"] = [clean_text(p[0], 100) for p in parts]  # split_location drops a prefix, so check the start again
     jobs["postcode"] = [p[1] for p in parts]
     jobs["postcode_type"] = [p[2] for p in parts]
     jobs["hint"] = [p[3] for p in parts]
@@ -622,8 +671,8 @@ def main():
         if not pc and town:
             pc = town_postcode(town, r["hint"])
             ptype = "town centre, approximate" if pc else ""
-        towns.append(town)
-        pcs.append(pc)
+        towns.append(clean_text(town, 100))  # looked up values come from outside too
+        pcs.append(clean_text(pc, 10))
         types.append(ptype)
     leads["town"], leads["postcode"], leads["postcode_type"] = towns, pcs, types
     TOWNS_PATH.write_text(json.dumps(TOWNS, indent=0, sort_keys=True))
@@ -637,7 +686,7 @@ def main():
            "search", "company_key"]
     leads = leads[out]
     leads.insert(0, "run_date", TODAY.isoformat())
-    leads.to_csv(DATA / "leads.csv", index=False)
+    write_csv(leads, DATA / "leads.csv")
     docs = []
     for _, r in leads.iterrows():
         note = f"Job Watcher {r['score']}: {r['flags']}" + (f"; postcode {r['postcode']}" if r["postcode"] else "")
@@ -664,6 +713,11 @@ def main():
                 continue
             have.add(d["doc_id"])
             data = dict(d["data"], status="Review", addedAt=TODAY.isoformat())
+            # an earlier run wrote these, perhaps before the cleaning existed: same rules as today's
+            for field, limit in (("company", 100), ("role", 120), ("location", 100), ("salaryText", 60), ("notes", 300)):
+                if field in data:
+                    data[field] = clean_text(data[field], limit)
+            data["advertUrl"] = safe_url(data.get("advertUrl"))
             if "first listed" not in str(data.get("notes", "")):
                 data["notes"] = f"{data.get('notes', '')}; first listed {run['run_date']}"
             carried.append({"doc_id": d["doc_id"], "data": data})
@@ -673,7 +727,7 @@ def main():
 
     jobs_out = jobs[[c for c in out if c in jobs.columns and c not in ("doc_id", "salary_lower")]]
     jobs_out.insert(0, "run_date", TODAY.isoformat())
-    jobs_out.to_csv(DATA / "latest_jobs.csv", index=False)
+    write_csv(jobs_out, DATA / "latest_jobs.csv")
 
     sent = leads[["company_key", "company"]].copy()
     sent["first_sent"] = sent["company_key"].map(
@@ -681,14 +735,14 @@ def main():
     sent["last_sent"] = TODAY.isoformat()
     emitted = pd.concat([emitted[~emitted["company_key"].isin(sent["company_key"])], sent])
     emitted = emitted[emitted["last_sent"] >= (TODAY - timedelta(days=180)).isoformat()]
-    emitted.to_csv(emitted_path, index=False)
+    write_csv(emitted, emitted_path)
 
     new = seen_today
     new["first_seen"] = new["key"].map(lambda k: first_seen.get(k, TODAY.isoformat()))
     new["last_seen"] = TODAY.isoformat()
     hist = pd.concat([hist[~hist["key"].isin(new["key"])], new])
     hist = hist[hist["last_seen"] >= (TODAY - timedelta(days=120)).isoformat()]
-    hist.to_csv(hist_path, index=False)
+    write_csv(hist, hist_path)
 
     log("funnel " + ", ".join(f"{k} {v}" for k, v in n.items()))
     by_track = leads["track"].value_counts().to_dict()
