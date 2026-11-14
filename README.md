@@ -45,6 +45,23 @@ Edit `config.json` and commit. Nothing else changes.
 - An agency getting through: add it to `agency_names` or `agency_keywords`.
 - A sector you do not want: add a word to `exclude_company_words`.
 
+## Security
+
+This repository is public and its output ends up in the CRM, in front of AI agents and in outreach emails, so an advert or a
+package must not be able to steer any of that.
+
+- **Packages are pinned.** `requirements.txt` lists every package at an exact version with its hashes, and the run installs with
+  `--require-hashes`: a package swapped or changed upstream fails the install instead of running. To update, edit
+  `requirements.in` if needed, then `uv pip compile requirements.in --generate-hashes --python-version 3.12 --python-platform x86_64-manylinux_2_28 -o requirements.txt`
+  and commit both files.
+- **Two jobs.** `scrape` runs the packages and can only read this repository. `save` commits `data/` and runs no Python. The token
+  that can write here is never in the job that runs other people's code.
+- **Actions are pinned** to exact commits (the version is in the comment beside each). Update the commit and the comment together.
+- **Advert text is cleaned as it arrives.** Company, title and location become one line with no hidden characters, only letters,
+  digits and the punctuation real names use, capped at 100 to 120 characters, and never starting with a character a
+  spreadsheet reads as a formula. A link is kept only when it is an https Indeed or Reed address. Leads carried over from
+  earlier runs go through the same cleaning.
+
 ## Running by hand
 
 Actions tab, Job Watcher, Run workflow. About 3 minutes. Results commit to `data/`.
